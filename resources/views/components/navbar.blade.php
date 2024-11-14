@@ -13,6 +13,19 @@
             <a class="nav-link" href="{{route('announcements.create')}}">Crea Articolo</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">Registrati</a>
+          </li>
+          <li>
+          <form action="{{route('logout')}}"  method="POST" id="form-logout">
+            @csrf
+            <button class="btn btn-primary" type="submit"> Logout</button>
+            
+          </form>
+        </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item dropdown">
