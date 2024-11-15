@@ -18,7 +18,10 @@
                     @endforelse
                 </div>
             </div>   
-            
         </div> 
+        {{-- PAGINAZIONE SE NON CAPITE COSA SIA --}}
+        <div class="d-flex justify-content-center">
+            {{ $announcements->links() }}
+        </div>
     </x-layout>
     
