@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
 class AnnouncementController extends Controller implements HasMiddleware {
 
@@ -14,6 +15,11 @@ class AnnouncementController extends Controller implements HasMiddleware {
             new Middleware( 'log', only: [ 'announcements.create' ] ),
             // new Middleware( 'subscribed', except: [ 'store' ] ),
         ];
+    }
+
+    public function index() {
+        $announcements = Announcement::orderBy( 'created_at', 'desc' )->with( 'category' )->get();
+        return view( 'announcements.index', compact( 'announcements' ) );
     }
 
     public function create() {

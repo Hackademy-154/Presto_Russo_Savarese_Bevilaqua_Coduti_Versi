@@ -24,11 +24,11 @@ class CreateAnnuncementsForm extends Component {
     public function save() {
         $this->validate();
 
-        $announcement = Announcement::create( [
+        $this->announcement = Announcement::create( [
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
-            'category_id' => $this->selectedCategory,
+            'category_id' =>$this->selectedCategory ,
             'user_id' => Auth::id()
         ] );
         session()->flash( 'success', 'Annunci Creati Con Successo!' );

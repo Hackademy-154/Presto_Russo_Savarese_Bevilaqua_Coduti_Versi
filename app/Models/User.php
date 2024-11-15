@@ -3,10 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Announcement;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -15,11 +16,7 @@ class User extends Authenticatable {
     public function announcements() : HasMany {
         return $this->hasMany( Announcement::class );
     }
-    /**
-    * The attributes that are mass assignable.
-    *
-    * @var array<int, string>
-    */
+
     protected $fillable = [
         'name',
         'email',
