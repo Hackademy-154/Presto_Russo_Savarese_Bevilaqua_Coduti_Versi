@@ -4,7 +4,8 @@
     background-color: #fff;
     border-radius: 24px;
     border-style: none;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+        rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
     box-sizing: border-box;
     color: #3c4043;
     cursor: pointer;
@@ -14,7 +15,7 @@
     font-weight: 500;
     height: 48px;
     justify-content: center;
-    letter-spacing: .25px;
+    letter-spacing: 0.25px;
     line-height: normal;
     max-width: 100%;
     overflow: visible;
@@ -38,12 +39,66 @@
 }
 
 .btn-custom:active {
-    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+        0 8px 12px 6px rgb(60 64 67 / 15%);
     outline: none;
 }
 
 .btn-custom:focus {
     outline: none;
-    border: 2px solid #d8b4fc ;
+    border: 2px solid #d8b4fc;
 }
 
+:root {
+    --main-bg-color: #b4eded;
+    --button-color: #7d00ff;
+    --color-text: #1C1C1C;
+}
+
+.background-color{
+    background: var(--main-bg-color);
+}
+
+.border-navbar-bottom1{
+    border-bottom: 4px solid var(--button-color)
+    ;
+}
+
+
+body {
+    margin: 20px;
+    background: #455a64;
+}
+.search-box {
+    position: relative;
+}
+.search-box .bi {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    left: 0px;
+    top: -3px;
+}
+.search-box .bi:before {
+    color: white;
+    transition: all 0.2s linear;
+}
+.search-box input {
+    color: #fff;
+    padding-left: 60px;
+    background: #546e7a;
+    border:0;
+    outline: none !important;
+    transition: all 0.2s linear;
+}
+.search-box input:focus {
+    background: #fff !important;
+    outline: 0;
+    color: #333;
+}
+.search-box input:focus + .bi:before {
+    color: #333;
+}
+.search-box input:hover {
+    background: #78909c;
+}
