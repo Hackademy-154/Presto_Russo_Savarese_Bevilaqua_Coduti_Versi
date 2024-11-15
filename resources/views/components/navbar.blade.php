@@ -24,6 +24,21 @@
                     <a class="nav-link" href="#">Chi Siamo</a>
                 </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorie
+                    </a>
+                <ul class="dropdown-menu">
+                    @foreach($categories as $category)
+                        <li>
+                            <a class="dropdown-item text-capitalize" href="{{route('byCategory', ['category' => $category])}}">{{ $category->name }}</a>
+                        </li>
+                        @if (!$loop->last)
+                        <hr class="dropdown-divider">
+                            
+                        @endif
+                    @endforeach
+                </ul>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @auth
@@ -32,6 +47,7 @@
                             Ciao Visitatore
                         @endauth
                     </a>
+
                     <ul class="dropdown-menu">
                         @auth
                             <li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\Middleware;
@@ -29,4 +30,8 @@ class AnnouncementController extends Controller implements HasMiddleware {
     public function show( Announcement $announcement ) {
         return view( 'announcements.show', compact( 'announcement' ) );
     }
+
+    public function byCategory( Category $category ) {
+        return view( 'announcements.byCategory', ['announcements' => $category->announcements, 'category' => $category ] );
+}
 }
