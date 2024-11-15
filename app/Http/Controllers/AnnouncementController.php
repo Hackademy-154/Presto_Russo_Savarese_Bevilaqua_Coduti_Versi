@@ -25,4 +25,8 @@ class AnnouncementController extends Controller implements HasMiddleware {
         $announcements = Announcement::orderBy( 'created_at', 'desc' )->paginate( 6 );
         return view( 'announcements.index', compact( 'announcements' ) );
     }
+
+    public function show( Announcement $announcement ) {
+        return view( 'announcements.show', compact( 'announcement' ) );
+    }
 }

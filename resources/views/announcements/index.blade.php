@@ -1,6 +1,5 @@
 <x-layout>
-    <x-slot name="title">Annunci</x-slot>
-    <x-slot name="content">
+    
         <h1>Pagina Annunci</h1>
         <div class="container" >
             <div class="row justify-content-center">

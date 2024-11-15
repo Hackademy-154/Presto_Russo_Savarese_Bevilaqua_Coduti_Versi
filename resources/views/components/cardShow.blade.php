@@ -4,7 +4,8 @@
         <h5 class="card-title">{{ $announcement->title }}</h5>
         <p class="card-text">Prezzo: {{ $announcement->price }} €</p>
         <p class="card-text">Categoria: {{ $announcement->category->name }}</p>
-        <a href="{{ route('announcements.show', compact('announcement')) }}" class="btn btn-primary">Dettaglio
-            Annuncio</a>
+        <a href="#" class="btn btn-primary">Dettaglio Annuncio</a>
+   
     </div>
+    
 </div>
