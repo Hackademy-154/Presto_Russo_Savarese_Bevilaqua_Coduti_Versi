@@ -33,6 +33,7 @@ class CreateAnnuncementsForm extends Component {
         ] );
         session()->flash( 'success', 'Annunci Creati Con Successo!' );
         $this->reset();
+
     }
 
     public function render() {
