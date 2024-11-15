@@ -4,7 +4,7 @@
         {{ session('success') }}
     </div>
     @endif
-    <form wire:submit="save">
+    <form wire:submit="save" class="formCustom">
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
             <input type="title" class="form-control @error('title') is-invalid @enderror " id="title" wire:model.live.blur="title">

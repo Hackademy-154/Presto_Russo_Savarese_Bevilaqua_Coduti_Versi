@@ -8,7 +8,21 @@
     </div>
 </div>
 
+@auth
+<div class="text-center py-5">
+    <a class="btn btn-custom" href="{{ route('announcements.create') }}">
+        Inserisci un annuncio
+    </a>
+</div>
+@endauth
+@guest
+<div class="text-center py-5">
+    <a class="btn btn-custom" href="{{ route('register') }}">
+        Registrati
+    </a>
+@endguest
 
+</div>
 
 
 </x-layout>
