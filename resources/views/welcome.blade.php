@@ -23,16 +23,25 @@
         @endguest
         
     </div>
-    <div>
-        <h2>Ultimi 6 Annunci in ordine di caricamento</h2>
-        @forelse ($latestAnnouncements as $announcement) 
+
+
+    <h2>Ultimi 6 Annunci in ordine di caricamento</h2>
+    <div class="container" >
+        <div class="row justify-content-center">
+            <div class="col-12  mb-4 d-flex justify-content around" >
+                
+                @forelse ($latestAnnouncements as $announcement) 
+               
+                <x-cardsHome :announcement="$announcement" />
+                
+                @empty
+                <div class="col-12">
+                    <h2>Al Momento Non Sono Presenti Annunci Disponibili! Saranno Caricati in Futuro!</h2>
+                </div>
+                @endforelse
+            </div>
+        </div>   
         
-        
-        <x-cardsHome :announcement="$announcement" />
-        @empty
-        <h2>Al Momento Non Sono Presenti Annunci Disponibili ! Saranno Caricati in Futuro!</h2>
-        @endforelse
-    </div>
-    
+    </div> 
     
 </x-layout>

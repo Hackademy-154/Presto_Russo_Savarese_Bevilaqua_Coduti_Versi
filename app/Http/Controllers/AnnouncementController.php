@@ -17,12 +17,12 @@ class AnnouncementController extends Controller implements HasMiddleware {
         ];
     }
 
-    public function index() {
-        $announcements = Announcement::orderBy( 'created_at', 'desc' )->with( 'category' )->get();
-        return view( 'announcements.index', compact( 'announcements' ) );
-    }
-
     public function create() {
         return view( 'announcements.create' );
+    }
+
+    public function index() {
+        $announcements = Announcement::orderBy( 'created_at', 'desc' )->paginate( 6 );
+        return view( 'announcements.index', compact( 'announcements' ) );
     }
 }

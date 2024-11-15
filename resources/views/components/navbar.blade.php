@@ -18,7 +18,7 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('home.page') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Annunci</a>
+                    <a class="nav-link" href="{{route('announcements.index')}}">Annunci</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Chi Siamo</a>
