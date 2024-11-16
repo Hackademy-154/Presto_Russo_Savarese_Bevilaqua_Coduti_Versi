@@ -35,7 +35,7 @@
 
                             @foreach ($categories as $category)
                                 <li>
-                                    <a class="dropdown-item text-capitalize"
+                                    <a id="textDrop" class="dropdown-item text-capitalize"
                                         href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
                                 </li>
                                 @if (!$loop->last)
