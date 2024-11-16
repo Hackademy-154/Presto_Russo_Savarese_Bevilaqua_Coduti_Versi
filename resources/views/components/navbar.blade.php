@@ -14,8 +14,6 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
 
-
-
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('home.page') }}">Home</a>
                 </li>
@@ -30,21 +28,21 @@
                         aria-expanded="false">
                         Categorie
                     </a>
-                    <ul class="dropdown-menu">
-                        <div class="row">
 
-                            @foreach ($categories as $category)
-                                <li>
-                                    <a id="textDrop" class="dropdown-item text-capitalize"
-                                        href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
-                                </li>
-                                @if (!$loop->last)
-                                    <hr class="dropdown-divider">
-                                @endif
-                            @endforeach
+                    <div class="dropdown-menu dropdown-menu1 dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
+                        <div class="row justify-content-between me-5">
+                          @foreach ($categories as $index => $category)
+                            <div class="col-md-3">
+                              <a class="dropdown-item text-capitalize"  href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                            </div>
+                            @if (($index + 1) % 3 == 0)
+                              </div><div class="row justify-content-between me-5">
+                            @endif
+                          @endforeach
                         </div>
-                    </ul>
-                <li class="nav-item dropdown">
+
+
+                <li class="nav-item dropdown  ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @auth
@@ -54,7 +52,7 @@
                         @endauth
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         @auth
                             <li>
                                 <form action="{{ route('logout') }}" method="POST" id="form-logout">

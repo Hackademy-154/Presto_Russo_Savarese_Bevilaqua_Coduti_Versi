@@ -138,7 +138,14 @@ input::placeholder {
 }
 
 .dropdown-menu {
-    background: linear-gradient(90deg, #5171ffb5, #ff66c4b5);
+    background: linear-gradient(90deg, #5171ffcb, #ff66c4c3);
+    white-space: nowrap;
+      /* Lascia che il contenuto determini la larghezza */
+}
+.dropdown-menu1{
+
+    min-width: 35vw;
+    width: auto;
 }
 
 
@@ -148,3 +155,35 @@ input::placeholder {
 }
 
 
+/* bottoni drop down effetti */
+.dropdown-item {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent; 
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+    transition: left 0.3s ease;
+    z-index: -100; 
+}
+
+
+
+.dropdown-item:hover::before {
+    left: 0; 
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: transparent; 
+}
+
+.dropdown-item:hover #textDrop {
+    z-index: 1000;
+}
