@@ -172,10 +172,8 @@ input::placeholder {
     background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
     border-radius: 15px;
     transition: left 0.3s ease;
-    z-index: -100; 
+    z-index: -1; 
 }
-
-
 
 .dropdown-item:hover::before {
     left: 0; 
@@ -183,8 +181,4 @@ input::placeholder {
 
 .dropdown-item:hover, .dropdown-item:focus {
     background-color: transparent; 
-}
-
-.dropdown-item:hover #textDrop {
-    z-index: 1000;
 }

@@ -32,11 +32,11 @@
                     <div class="dropdown-menu dropdown-menu1 dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
                         <div class="row justify-content-between me-5">
                           @foreach ($categories as $index => $category)
-                            <div class="col-md-3">
-                              <a class="dropdown-item text-capitalize"  href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                            <div class="col-12 col-md-4">
+                              <a class="dropdown-item text-capitalize p-2 mx-auto"  href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
                             </div>
                             @if (($index + 1) % 3 == 0)
-                              </div><div class="row justify-content-between me-5">
+                              <div class="row justify-content-between "></div>
                             @endif
                           @endforeach
                         </div>
