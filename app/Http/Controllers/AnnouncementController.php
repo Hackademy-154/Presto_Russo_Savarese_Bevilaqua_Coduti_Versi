@@ -12,9 +12,9 @@ class AnnouncementController extends Controller implements HasMiddleware {
 
     public static function middleware(): array {
         return [
-            'auth',
-            new Middleware( 'log', only: [ 'announcements.create' ] ),
-            // new Middleware( 'subscribed', except: [ 'store' ] ),
+
+            new Middleware( 'auth', only: [ 'announcements.create' ] ),
+
         ];
     }
 
@@ -32,6 +32,6 @@ class AnnouncementController extends Controller implements HasMiddleware {
     }
 
     public function byCategory( Category $category ) {
-        return view( 'announcements.byCategory', ['announcements' => $category->announcements, 'category' => $category ] );
-}
+        return view( 'announcements.byCategory', [ 'announcements' => $category->announcements, 'category' => $category ] );
+    }
 }
