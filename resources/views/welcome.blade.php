@@ -6,9 +6,6 @@
             <div class="col-12 col-md-6">
                 <h1 class=" font-giant">Presto.it</h1>
             </div>
-            <div class="col-12 col-md-6">
-                <h1 class=" font-giant">Presto.it</h1>
-            </div>
         </div>
     </div>
 
