@@ -138,7 +138,7 @@ input::placeholder {
 }
 
 .dropdown-menu {
-    background: linear-gradient(90deg, #5171ffb5, #ff66c4b5);
+    background: linear-gradient(90deg, #5171ffcb, #ff66c4c3);
     white-space: nowrap;
       /* Lascia che il contenuto determini la larghezza */
 }

@@ -1,9 +1,22 @@
 <x-layout>
 
-    <div class="container">
+
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+            <div class="col-12 col-md-6">
+                <h1 class=" font-giant">Presto.it</h1>
+            </div>
+            <div class="col-12 col-md-6">
+                <h1 class=" font-giant">Presto.it</h1>
+            </div>
+        </div>
+    </div>
+
+{{--//! Non cancellare, WIP  --}}
+
+    {{-- <div class="container">
         <div class="row  d-flex justify-content-center">
             <div class="col-12 col-md-6 text-center mt-5 ">
-                <h1 class=" font-giant">Presto.it</h1>
             </div>
         </div>
     </div>
@@ -22,24 +35,23 @@
         </a>
         @endguest
 
-    </div>
+    </div> --}}
 
 
 
 
     <h2>Ultimi 6 Annunci in ordine di caricamento</h2>
-    <div class="container" >
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12  mb-4 d-flex justify-content around" >
+            <div class="col-12  mb-4 d-flex justify-content around">
 
                 @forelse ($latestAnnouncements as $announcement)
-
-                <x-cardsHome :announcement="$announcement" />
+                    <x-cardsHome :announcement="$announcement" />
 
                 @empty
-                <div class="col-12">
-                    <h2>Al Momento Non Sono Presenti Annunci Disponibili! Saranno Caricati in Futuro!</h2>
-                </div>
+                    <div class="col-12">
+                        <h2>Al Momento Non Sono Presenti Annunci Disponibili! Saranno Caricati in Futuro!</h2>
+                    </div>
                 @endforelse
             </div>
         </div>

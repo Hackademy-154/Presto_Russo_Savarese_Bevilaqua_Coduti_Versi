@@ -41,22 +41,8 @@
                           @endforeach
                         </div>
 
-{{--
-                    <ul class="dropdown-menu">
 
-                        @foreach ($categories as $category)
-                            <li>
-                                <a class="dropdown-item text-capitalize gradient-button"
-                                    href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
-                            </li>
-                            @if (!$loop->last)
-                                <hr class="dropdown-divider">
-                            @endif
-                        @endforeach
-                    </ul> --}}
-
-
-                <li class="nav-item dropdown ">
+                <li class="nav-item dropdown  ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @auth
@@ -66,7 +52,7 @@
                         @endauth
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         @auth
                             <li>
                                 <form action="{{ route('logout') }}" method="POST" id="form-logout">
