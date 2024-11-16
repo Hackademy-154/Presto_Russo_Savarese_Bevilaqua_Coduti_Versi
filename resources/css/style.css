@@ -1,5 +1,5 @@
-*{
-font-family:Telegraf ;
+* {
+    font-family: Telegraf;
 }
 
 .btn-custom {
@@ -56,18 +56,16 @@ font-family:Telegraf ;
 :root {
     --main-bg-color: #b4eded;
     --button-color: #7d00ff;
-    --color-text: #1C1C1C;
+    --color-text: #1c1c1c;
 }
 
-.background-color{
+.background-color {
     background: var(--main-bg-color);
 }
 
-.border-navbar-bottom1{
-    border-bottom: 4px solid var(--button-color)
-    ;
+.border-navbar-bottom1 {
+    border-bottom: 4px solid var(--button-color);
 }
-
 
 /* body {
     margin: 20px;
@@ -91,8 +89,8 @@ font-family:Telegraf ;
 .search-box input {
     color: #fff;
     padding-left: 60px;
-    background: #A8BBF1;
-    border:0;
+    background: #a8bbf1;
+    border: 0;
     outline: none !important;
     transition: all 0.2s linear;
 }
@@ -126,20 +124,25 @@ form {
     flex-direction: column;
 }
 
-.navbar-widht1{
+.navbar-widht1 {
     width: 40vw;
 }
 
-input::placeholder{
-    color: #8898C4 !important;
+input::placeholder {
+    color: #8898c4 !important;
 }
 
-.font-giant{
+.font-giant {
     font-size: 100px;
     font-weight: 500;
 }
 
-
 .dropdown-menu {
-    background-color: #4CAF50; /* Colore personalizzato */
-  }
+    background: linear-gradient(90deg, #5171ffb5, #ff66c4b5);
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ffffff; /* placeholder */
+    color: #000000; /*placeholder del testo*/
+}
