@@ -45,6 +45,6 @@
                 @endauth
             </div>   
         </div> 
-        {{-- PAGINAZIONE SE NON CAPITE COSA SIA --}}
+        
         
     </x-layout>
