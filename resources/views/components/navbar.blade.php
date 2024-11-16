@@ -30,21 +30,36 @@
                         aria-expanded="false">
                         Categorie
                     </a>
-                    <ul class="dropdown-menu">
-                        <div class="row">
 
-                            @foreach ($categories as $category)
-                                <li>
-                                    <a class="dropdown-item text-capitalize"
-                                        href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
-                                </li>
-                                @if (!$loop->last)
-                                    <hr class="dropdown-divider">
-                                @endif
-                            @endforeach
+
+                    <div class="dropdown-menu dropdown-menu1 dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
+                        <div class="row">
+                          @foreach ($categories as $index => $category)
+                            <div class="col-md-3">
+                              <a class="dropdown-item text-capitalize"  href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                            </div>
+                            @if (($index + 1) % 3 == 0)
+                              </div><div class="row">
+                            @endif
+                          @endforeach
                         </div>
-                    </ul>
-                <li class="nav-item dropdown">
+
+{{--
+                    <ul class="dropdown-menu">
+
+                        @foreach ($categories as $category)
+                            <li>
+                                <a class="dropdown-item text-capitalize gradient-button"
+                                    href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                            </li>
+                            @if (!$loop->last)
+                                <hr class="dropdown-divider">
+                            @endif
+                        @endforeach
+                    </ul> --}}
+
+
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         @auth
