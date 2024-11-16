@@ -14,8 +14,6 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
 
-
-
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('home.page') }}">Home</a>
                 </li>
@@ -31,15 +29,14 @@
                         Categorie
                     </a>
 
-
                     <div class="dropdown-menu dropdown-menu1 dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
-                        <div class="row">
+                        <div class="row justify-content-between me-5">
                           @foreach ($categories as $index => $category)
                             <div class="col-md-3">
                               <a class="dropdown-item text-capitalize"  href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
                             </div>
                             @if (($index + 1) % 3 == 0)
-                              </div><div class="row">
+                              </div><div class="row justify-content-between me-5">
                             @endif
                           @endforeach
                         </div>
