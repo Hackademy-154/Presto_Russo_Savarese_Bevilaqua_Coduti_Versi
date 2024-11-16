@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->float('price',8,2);
+            $table->float('price');
            //relazione con user
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             // relazione con category
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');  
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

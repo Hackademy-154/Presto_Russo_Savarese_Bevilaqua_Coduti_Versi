@@ -1,3 +1,7 @@
+*{
+font-family:Telegraf ;
+}
+
 .btn-custom {
     align-items: center;
     appearance: none;
@@ -65,10 +69,10 @@
 }
 
 
-body {
+/* body {
     margin: 20px;
-    background: #455a64;
-}
+    background: #7b00ff66;
+} */
 .search-box {
     position: relative;
 }
@@ -79,6 +83,7 @@ body {
     left: 0px;
     top: -3px;
 }
+
 .search-box .bi:before {
     color: white;
     transition: all 0.2s linear;
@@ -86,21 +91,23 @@ body {
 .search-box input {
     color: #fff;
     padding-left: 60px;
-    background: #546e7a;
+    background: #A8BBF1;
     border:0;
     outline: none !important;
     transition: all 0.2s linear;
 }
+
 .search-box input:focus {
     background: #fff !important;
     outline: 0;
     color: #333;
 }
+
 .search-box input:focus + .bi:before {
     color: #333;
 }
 .search-box input:hover {
-    background: #78909c;
+    background: var(--button-color);
 }
 
 .formCustom {
@@ -113,7 +120,26 @@ body {
     height: auto;
     padding: 20px;
 }
+
 form {
     display: flex;
     flex-direction: column;
 }
+
+.navbar-widht1{
+    width: 40vw;
+}
+
+input::placeholder{
+    color: #8898C4 !important;
+}
+
+.font-giant{
+    font-size: 100px;
+    font-weight: 500;
+}
+
+
+.dropdown-menu {
+    background-color: #4CAF50; /* Colore personalizzato */
+  }

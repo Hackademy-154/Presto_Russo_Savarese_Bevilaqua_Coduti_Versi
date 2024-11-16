@@ -7,4 +7,3 @@
                 <a href="#" class="btn btn-primary">Dettaglio Annuncio</a>
             </div>
         </div>
-  

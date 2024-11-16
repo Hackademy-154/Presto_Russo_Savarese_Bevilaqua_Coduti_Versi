@@ -1,13 +1,13 @@
 <x-layout>
-    
+
     <div class="container">
         <div class="row  d-flex justify-content-center">
-            <div class="col-12 col-md-6 text-center mt-5">
-                <h1>PRESTO HOMEPAGE</h1>
+            <div class="col-12 col-md-6 text-center mt-5 ">
+                <h1 class=" font-giant">Presto.it</h1>
             </div>
         </div>
     </div>
-    
+
     @auth
     <div class="text-center py-5">
         <a class="btn btn-custom" href="{{ route('announcements.create') }}">
@@ -21,7 +21,7 @@
             Registrati
         </a>
         @endguest
-        
+
     </div>
 
 
@@ -29,19 +29,19 @@
     <div class="container" >
         <div class="row justify-content-center">
             <div class="col-12  mb-4 d-flex justify-content around" >
-                
-                @forelse ($latestAnnouncements as $announcement) 
-               
+
+                @forelse ($latestAnnouncements as $announcement)
+
                 <x-cardsHome :announcement="$announcement" />
-                
+
                 @empty
                 <div class="col-12">
                     <h2>Al Momento Non Sono Presenti Annunci Disponibili! Saranno Caricati in Futuro!</h2>
                 </div>
                 @endforelse
             </div>
-        </div>   
-        
-    </div> 
-    
+        </div>
+
+    </div>
+
 </x-layout>
