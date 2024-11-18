@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-6 text-center mt-5">
-                <h1>Fai il tuo Login Pezzo dimmerda</h1>
+                <h1>Fai il tuo Login</h1>
             </div>
         </div>
     </div>

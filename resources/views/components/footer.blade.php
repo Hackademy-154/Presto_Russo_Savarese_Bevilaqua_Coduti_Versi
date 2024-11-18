@@ -14,8 +14,8 @@
         <div class="col-12 col-md-2 mb-2">
             <h5 class="fw-bold"><i class="bi bi-truck"></i> Partners</h5>
             <ul class="nav flex-wrap justify-content-center">
-                <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img class="img-fluid footer-icon-size dhl-iconsize"
-                            src="{{ asset('icons/DHL_Group_06.2023.svg.png') }}" alt="dhl"></a></li>
+                <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img class="img-fluid footer-icon-size"
+                            src="{{ asset('icons/DHL_Group_06.2023.svg.jpg') }}" alt="dhl"></a></li>
                 <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img class="img-fluid footer-icon-size"
                             src="{{ asset('icons/Web-Ready-Small-DPD-icon.jpg') }}" alt="dpd"></a></li>
                 <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img class="img-fluid footer-icon-size"
