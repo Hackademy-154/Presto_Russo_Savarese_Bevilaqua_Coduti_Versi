@@ -212,3 +212,20 @@ footer {
     background-color: #A8BBF1;
     border-radius: 10px;
 }
+
+.footer-icon-size{
+    min-width: 10vh;
+    max-width: 10vh;
+    border-radius: 10px;
+}
+
+.dhl-iconsize{
+    min-height: 10vh;
+    max-height: 10vh;
+
+}
+
+.flag-size{
+    min-height: 10vh;
+    max-width: 10vh;
+}
