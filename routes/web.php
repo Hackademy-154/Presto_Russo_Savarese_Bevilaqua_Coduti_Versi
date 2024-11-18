@@ -14,6 +14,6 @@ Route::get( '/announcements/{announcement}', [ AnnouncementController::class, 's
 Route::get( '/category/{category}', [ AnnouncementController::class, 'byCategory' ] )->name( 'byCategory' );
 
 // Rotte per i revisori
-route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+route::get('/revisor/index', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 route::patch('/accept/{announcement}', [RevisorController::class, 'accept'])->name('accept');
 route::patch('/reject/{announcement}', [RevisorController::class, 'reject'])->name('reject');

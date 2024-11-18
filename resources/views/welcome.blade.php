@@ -1,5 +1,9 @@
 <x-layout>
-
+@if(session()->has('errorMessage'))
+    <div class="alert alert-danger text-center shadow tounded w-50">
+        {{session('errorMessage')}}
+    </div>
+@endif
 
     <div class="container-fluid">
         <div class="row justify-content-around">
