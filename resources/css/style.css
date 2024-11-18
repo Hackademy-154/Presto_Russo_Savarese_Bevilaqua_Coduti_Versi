@@ -224,3 +224,8 @@ footer {
     min-height: 10vh;
     max-width: 10vh;
 }
+
+.buttonsize{
+padding-left: 10px;
+padding-right: 10px;
+}

@@ -1,4 +1,4 @@
-<footer class="py-3 container-fluid background-footer">
+<footer class="py-3 container-fluid background-footer mt-5">
     <div class="px-3 row justify-content-between">
         <!-- Aiuto & Contatti -->
         <div class="col-12 col-md-2 mb-2">

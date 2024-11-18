@@ -13,8 +13,8 @@
                 @csrf
                 <div class="mb-3 row">
 
-                    <label for="email" class="col-sm-2 col-form-label fs-4 fw-bold">Email</label>
                     <div class="col-sm-10">
+                        <label for="email" class="col-sm-2 col-form-label fs-4 fw-bold">Email</label>
                         <input type="email" name="email" id="email"
                             class="form-control  @error('email') is-invalid @enderror">
                         @error('email')
@@ -23,8 +23,8 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="password" class="col-sm-2 col-form-label fs-4 fw-bold">Password</label>
                     <div class="col-sm-10">
+                        <label for="password" class="col-sm-2 col-form-label fs-4 fw-bold">Password</label>
                         <input type="password" name='password' id="password"
                             class="form-control @error('password') is-invalid @enderror">
                         @error('password')
@@ -33,7 +33,9 @@
                     </div>
                     <div class="text-center py-5">
                         <button type="submit" class="btn btn-custom">Accedi</button>
+                    </div>
+                </div>
             </form>
-
-
+        </div>
+    </div>
 </x-layout>

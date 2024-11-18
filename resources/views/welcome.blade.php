@@ -1,21 +1,21 @@
 <x-layout>
-@if(session()->has('errorMessage'))
-    <div class="alert alert-danger text-center shadow tounded w-50">
-        {{session('errorMessage')}}
-    </div>
-@endif
+    @if (session()->has('errorMessage'))
+        <div class="alert alert-danger text-center shadow tounded w-50">
+            {{ session('errorMessage') }}
+        </div>
+    @endif
 
     <div class="container-fluid">
-        <div class="row justify-content-around">
-            <div class="col-12 col-md-6">
-                <h1 class=" font-giant">presto.it</h1>
+        <div class="row text-start">
+            <div class="col-12 col-md-6 ">
+                <h1 class=" px-5 font-giant">presto.it</h1>
             </div>
         </div>
     </div>
 
-{{--//! Non cancellare, WIP  --}}
+    {{-- //! Non cancellare, WIP  --}}
 
-    {{-- <div class="container">
+    <div class="container">
         <div class="row  d-flex justify-content-center">
             <div class="col-12 col-md-6 text-center mt-5 ">
             </div>
@@ -23,25 +23,27 @@
     </div>
 
     @auth
-    <div class="text-center py-5">
-        <a class="btn btn-custom" href="{{ route('announcements.create') }}">
-            Inserisci un annuncio
-        </a>
-    </div>
+        <div class="text-center py-5">
+            <a class="btn btn-custom" href="{{ route('announcements.create') }}">
+                Inserisci un annuncio
+            </a>
+        </div>
     @endauth
     @guest
-    <div class="text-center py-5">
-        <a class="btn btn-custom" href="{{ route('register') }}">
-            Registrati
-        </a>
+        <div class="text-start py-5 px-5">
+            <h1 class=" text-start">Trova ciò che cerchi in pochi <br> <a class="text-decoration-none fw-bold link-dark"
+                    href="{{ route('announcements.index') }}">CLICK</a></h1>
+            <a class=" btn btn-primary" href="{{ route('register') }}">
+                <h5 class="buttonsize">Registrati</h5>
+            </a>
         @endguest
 
-    </div> --}}
+    </div>
 
 
 
 
-    <h2>Ultimi 6 Annunci in ordine di caricamento</h2>
+    <h2 class="px-5">Ultimi 6 Annunci in ordine di caricamento</h2>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12  mb-4 d-flex justify-content around">

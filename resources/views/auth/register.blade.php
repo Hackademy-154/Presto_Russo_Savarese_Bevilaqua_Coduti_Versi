@@ -1,7 +1,7 @@
 {{-- Da questo momento, riprendiamo noi il controllo. QUESTA SARà LA VISTA DI LOG-IN, quindi di nuovo il procedimento per la creazione classica di una pagina --}}
 
 <x-layout>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <h1 class="text-center fw-bold"> Registrati </h1>
@@ -13,8 +13,8 @@
                     @csrf
                     <div class="mb-3 row">
 
-                        <label for="name" class="col-sm-2 col-form-label fs-4 fw-bold">Username</label>
                         <div class="col-sm-10">
+                            <label for="name" class="col-sm-2 col-form-label fs-4 fw-bold">Username:</label>
                             <input type="text" name="name" id="name"
                                 class="form-control  @error('name') is-invalid @enderror">
                             @error('name')
@@ -24,8 +24,8 @@
                     </div>
                     <div class="mb-3 row">
 
-                        <label for="email" class="col-sm-2 col-form-label fs-4 fw-bold">Email</label>
                         <div class="col-sm-10">
+                            <label for="email" class="col-sm-2 col-form-label fs-4 fw-bold">Email:</label>
                             <input type="text" name="email" id="email"
                                 class="form-control  @error('email') is-invalid @enderror">
                             @error('email')
@@ -34,8 +34,8 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="password" class="col-sm-2 col-form-label fs-4 fw-bold">Password</label>
                         <div class="col-sm-10">
+                            <label for="password" class="col-sm-2 col-form-label fs-4 fw-bold">Password:</label>
                             <input type="password" name="password" id="password"
                                 class="form-control @error('password') is-invalid @enderror">
                             @error('password')
@@ -44,8 +44,8 @@
                         </div>
                     </div>
                         <div class="mb-3 row">
-                            <label for="password_confirmation" class="col-sm-2 col-form-label fs-4 fw-bold">conferma password</label>
                             <div class="col-sm-10">
+                                <label for="password_confirmation" class="col-sm-2 col-form-label fs-4 fw-bold text-nowrap">Conferma password:</label>
                                 <input type="password" name='password_confirmation' id="password_confirmation"
                                     class="form-control @error('password_confirmation') is-invalid @enderror">
                                 @error('password_confirmation')
@@ -56,6 +56,8 @@
                         <div class="text-center py-2">
                             <div class="text-center py-2">
                                 <button type="submit" class="btn btn-custom">Registrati</button>
+                            </div>
+                        </div>
                 </form>
 
 
