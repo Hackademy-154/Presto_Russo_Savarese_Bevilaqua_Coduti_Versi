@@ -10,16 +10,37 @@ use Illuminate\Support\Facades\Auth;
 
 class CreateAnnuncementsForm extends Component {
 
-    #[ Validate( 'required|min:5' ) ]
+    #[ Validate ]
     public $title;
-    #[ Validate( 'required|min:10' ) ]
+    #[ Validate ]
     public $description;
-    #[ Validate( 'required|numeric' ) ]
+    #[ Validate ]
     public $price;
-    #[ Validate( 'required' ) ]
+    #[ Validate ]
     public $selectedCategory;
 
     public $announcement;
+
+    public function rules() {
+        return [
+            'title'=>'required|min:4',
+            'description'=>'required|min:10',
+            'price'=>'required|numeric',
+            'selectedCategory'=>'required'
+        ];
+    }
+
+    public function messages(): array {
+        return [
+            '*.required'=>'Non Hai Inserito nulla in :attribute',
+            'title.min'=>'Devi inserire in :attribute almeno 4 lettere',
+            'description.min'=>'Devi inseire in :attribute almeno un testo di 10 lettere ',
+            'price.required'=>'Seleziona almeno una :attribute ',
+            'selectedCategory.required' => 'Seleziona almeno una categoria',
+            // 'title.required' => 'A title is required',
+            // 'body.required' => 'A message is required',
+        ];
+    }
 
     public function save() {
         $this->validate();
