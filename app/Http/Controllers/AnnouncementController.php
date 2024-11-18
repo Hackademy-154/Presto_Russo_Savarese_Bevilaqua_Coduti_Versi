@@ -36,7 +36,7 @@ class AnnouncementController extends Controller implements HasMiddleware
 
     public function show(Announcement $announcement)
     {
-        return view('announcements.show', compact('announcements'));
+        return view('announcements.show', compact('announcement'));
     }
 
     public function byCategory(Category $category)
