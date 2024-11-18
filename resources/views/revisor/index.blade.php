@@ -55,7 +55,7 @@
             <div class="row justify-content-center pt-5 align-items-center">
                 <div class="col-12">
                     <h1 class="fst-italic display-4">
-                        nessun articolo da revisionare
+                        Nessun articolo da revisionare
                     </h1>
                     <a href="{{ route('home.page') }}" class="btn btn-custom">Torna alla Home</a>
                 </div>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-6 text-center mt-5">
-                <h1>Fai il tuo Login</h1>
+                <h1>Accedi</h1>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
                         @enderror
                     </div>
                     <div class="text-center py-5">
-                        <button type="submit" class="btn btn-custom">LogIn</button>
+                        <button type="submit" class="btn btn-custom">Accedi</button>
             </form>
 
 

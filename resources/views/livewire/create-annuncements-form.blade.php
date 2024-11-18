@@ -12,15 +12,15 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            
+
             <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" wire:model.live.blur="description">
-                
+
             </textarea>
-            
+
             @error('description') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
         <div class="mb-3">
-            
+
             <label for="categories" class="form-label">Seleziona Categorie Per Questo Film</label>
             <select class="form-control @error('selectedCategory') is-invalid @enderror" id="categories" wire:model.live.blur="selectedCategory" >
                 @foreach($categories as $category)
@@ -34,12 +34,12 @@
             <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" wire:model.live.blur="price">
             @error('price') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        
-        
+        <button type="submit" class="btn btn-primary">Inserisci</button>
+
+
     </form>
-    
-    
-    
-    
+
+
+
+
 </div>

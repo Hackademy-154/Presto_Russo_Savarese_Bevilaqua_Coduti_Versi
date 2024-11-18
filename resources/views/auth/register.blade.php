@@ -13,7 +13,7 @@
                     @csrf
                     <div class="mb-3 row">
 
-                        <label for="name" class="col-sm-2 col-form-label fs-4 fw-bold">NickName</label>
+                        <label for="name" class="col-sm-2 col-form-label fs-4 fw-bold">Username</label>
                         <div class="col-sm-10">
                             <input type="text" name="name" id="name"
                                 class="form-control  @error('name') is-invalid @enderror">
