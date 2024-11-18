@@ -19,5 +19,14 @@ class Announcement extends Model {
     public function category() : BelongsTo {
         return $this->belongsTo( Category::class );
     }
+
+
+
+    // funzione di logica di revisione articoli
+    public function setAccepted($value) {
+        $this->is_accepted = $value;
+        $this->save();
+        return true;
+    }
 }
 

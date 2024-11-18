@@ -20,9 +20,13 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('announcements.index') }}">Annunci</a>
                 </li>
+                @auth
+                @if (Auth::user()->is_revisor)
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Chi Siamo</a>
+                    <a class="nav-link" href="{{ route('revisor.index') }}">Zona Revisor</a>
                 </li>
+                @endif
+                @endauth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
