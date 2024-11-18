@@ -76,10 +76,9 @@
     border-bottom: 4px solid var(--button-color);
 }
 
-/* body {
-margin: 20px;
-background: #7b00ff66;
-} */
+body{
+    min-height: 100vh;
+}
 
 /* search bar */
 .search-box {
@@ -228,4 +227,10 @@ footer {
 .buttonsize{
 padding-left: 10px;
 padding-right: 10px;
+}
+
+
+/* ! index articoli */
+.dimensionepagina{
+    min-height: 100vh;
 }

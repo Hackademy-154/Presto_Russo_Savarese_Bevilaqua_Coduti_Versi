@@ -1,11 +1,11 @@
 <x-layout>
-    
+
     <h1>Dettaglio Annuncio</h1>
     <div class="container" >
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 mb-3 " >
-                
-                
+
+
                 <div id="carouselExample" class="carousel slide" >
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -43,8 +43,8 @@
                  @else
                 <button class="btn btn-success">Acquista</button>
                 @endauth
-            </div>   
-        </div> 
-        
-        
+            </div>
+        </div>
+
+
     </x-layout>
