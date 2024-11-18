@@ -20,13 +20,16 @@ class Announcement extends Model {
         return $this->belongsTo( Category::class );
     }
 
-
-
     // funzione di logica di revisione articoli
-    public function setAccepted($value) {
+
+    public function setAccepted( $value ) {
         $this->is_accepted = $value;
         $this->save();
         return true;
+    }
+
+    public static function countAttendToRevise() {
+        return Announcement::where( 'is_accepted', null )->count();
     }
 }
 

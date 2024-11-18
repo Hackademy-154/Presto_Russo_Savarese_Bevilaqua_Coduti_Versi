@@ -163,6 +163,7 @@ input::placeholder {
     color: #000000; /*placeholder del testo*/
 }
 
+
 .dropdown-item {
     position: relative;
     overflow: hidden;
@@ -188,6 +189,7 @@ input::placeholder {
 
 .dropdown-item:hover::before {
     left: 0;
+   
 }
 
 .dropdown-item:hover,
