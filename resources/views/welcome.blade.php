@@ -4,6 +4,11 @@
             {{ session('errorMessage') }}
         </div>
     @endif
+    @if(session()->has('message'))
+    <div class="alert alert-success text-center shadow tounded w-50">
+        {{ session('message') }}
+    </div>
+    @endif
 
     <div class="container-fluid">
         <div class="row text-start">
