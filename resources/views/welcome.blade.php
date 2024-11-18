@@ -48,10 +48,11 @@
 
 
 
-    <h2 class="px-5">Ultimi 6 Annunci in ordine di caricamento</h2>
+    
     <div class="container">
+        <h2 class="px-5 text-center">Ultimi 6 Annunci in ordine di creazione</h2>
         <div class="row justify-content-center">
-            <div class="col-12  mb-4 d-flex justify-content around">
+            <div class="col-12 mt-5 mb-4 d-flex justify-content-center">
 
                 @forelse ($announcements as $announcement)
                     <x-cardsHome :announcement="$announcement" />

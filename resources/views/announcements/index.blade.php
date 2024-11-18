@@ -1,9 +1,9 @@
 <x-layout>
 
-        <h1 class="px-5 mt-2">Pagina Annunci</h1>
+        <h1 class="px-5 mt-5 text-center">Pagina Annunci</h1>
         <div class="container dimensionepagina" >
             <div class="row justify-content-center">
-                <div class="col-12  mb-4 d-flex justify-content around" >
+                <div class="col-12 mt-5 mb-4 d-flex justify-content-center" >
                     @forelse ($announcements as $announcement)
 
                     <x-cardsIndex :announcement="$announcement" />
