@@ -7,7 +7,7 @@
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Pagamenti</a></li>
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Contanti</a></li>
                 <!-- Policy -->
-<br>
+                <br>
 
             </ul>
             <h5 class="fw-bold"><i class="bi bi-info-circle"></i> Policy</h5>
@@ -16,7 +16,6 @@
                         servizio</a></li>
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Cookies</a></li>
             </ul>
-
 
         </div>
 
@@ -59,31 +58,31 @@
             <p class="text-start text-nowrap " style="font-size: 15px">Cliccando Il Bottone SottoStante <br> Farai Una
                 Richiesta Al Nostro Amministratore</p>
             <a href="{{ route('revisor.request') }}" class="btn btn-info">Diventa Un Revisor</a>
-            </div>
         </div>
+    </div>
 
-        {{-- ! Top footer end, bottom footer start --}}
+    {{-- ! Top footer end, bottom footer start --}}
 
-        <!-- Flags e Copyright -->
-        <div class="d-flex flex-wrap justify-content-between align-items-center py-2 border-top">
-            <div class="d-flex flex-wrap justify-content-center">
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-islanda-circolare-96.png') }}" alt="Islanda"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-usa-circolare-96.png') }}" alt="America"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-circolare-tedesca-96.png') }}" alt="Germania"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-spagna2-circolare-96.png') }}" alt="Spagna"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-circolare-olandese-96.png') }}" alt="Olanda"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-belgio-circolare-96.png') }}" alt="Belgio"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-france-96.png') }}" alt="Francia"></a>
-                <a class="mx-2" href="#"><img class="img-fluid flag-size"
-                        src="{{ asset('icons/icons8-circolare-italia-48.png') }}" alt="Italia"></a>
-            </div>
-            <p class="mx-3 text-center fw-bold justify-item-center">© 2024 Presto.it</p>
+    <!-- Flags e Copyright -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center py-2 border-top">
+        <div class="d-flex flex-wrap justify-content-center">
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-islanda-circolare-96.png') }}" alt="Islanda"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-usa-circolare-96.png') }}" alt="America"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-circolare-tedesca-96.png') }}" alt="Germania"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-spagna2-circolare-96.png') }}" alt="Spagna"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-circolare-olandese-96.png') }}" alt="Olanda"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-belgio-circolare-96.png') }}" alt="Belgio"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-france-96.png') }}" alt="Francia"></a>
+            <a class="mx-2" href="#"><img class="img-fluid flag-size"
+                    src="{{ asset('icons/icons8-circolare-italia-48.png') }}" alt="Italia"></a>
         </div>
+        <p class="mx-3 text-center fw-bold justify-item-center">© 2024 Presto.it</p>
+    </div>
 </footer>
