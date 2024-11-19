@@ -1,16 +1,17 @@
 <x-layout>
+    <div class="container">
     @if (session()->has('message'))
     <div class="row justify-content-center">
-        <div class="col-5 alert alert-success text-center shadow rounded">
+        <div class="col-12 alert alert-success text-center shadow rounded">
             {{ session('message') }}
         </div>
     </div>
     @endif
-    <div class="container-fluid pt-5">
-        <div class="row">
-            <div class="col-3">
+    {{-- <div class="container-fluid pt-5"> --}}
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-md-6">
                 <div class="rounded shadow bg-body-secondary">
-                    <h1 class="diplay-5 text-center pb-2">
+                    <h1 class="diplay-5 text-center pt-2 pb-2">
                         Revisor Dashboard
                     </h1>
                 </div>
@@ -50,7 +51,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
         @else
             <div class="row justify-content-center pt-5 align-items-center">
                 <div class="col-12">

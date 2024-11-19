@@ -33,7 +33,6 @@ class RevisorController extends Controller {
     public function requestForRevisor() {
         Mail::to( 'admin@presto.it' )->send( new BecomeRevisor( Auth::user() ) );
         return redirect()->route( 'home.page' )->with( 'message', 'La Tua Richiesta Per Diventare Revisor del Sito inviata correttamente' );
-
     }
 
     public function makeRevisor( User $user ) {
