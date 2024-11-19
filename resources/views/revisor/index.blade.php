@@ -6,6 +6,32 @@
             {{ session('message') }}
         </div>
     </div>
+    <div class="sidebar-section">
+        <h5>Ultimi annunci accettati</h5>
+        <ul>
+            @forelse ($lastAccepted as $announcement)
+                <li>
+                    {{ $announcement->title }} - 
+                    <small>{{ $announcement->updated_at->format('d/m/Y H:i') }}</small>
+                </li>
+            @empty
+                <li>Nessun annuncio accettato recentemente.</li>
+            @endforelse
+        </ul>
+    
+        <h5>Ultimi annunci rifiutati</h5>
+        <ul>
+            @forelse ($lastRejected as $announcement)
+                <li>
+                    {{ $announcement->title }} - 
+                    <small>{{ $announcement->updated_at->format('d/m/Y H:i') }}</small>
+                </li>
+            @empty
+                <li>Nessun annuncio rifiutato recentemente.</li>
+            @endforelse
+        </ul>
+    </div>
+    
     @endif
     {{-- <div class="container-fluid pt-5"> --}}
         <div class="row mt-5 justify-content-center">

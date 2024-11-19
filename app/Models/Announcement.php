@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Announcement extends Model {
     protected $fillable = [
-        'title', 'description', 'price', 'category_id', 'user_id'
+        'title', 'description', 'price', 'category_id', 'user_id', 'status','reviewed_at'
     ];
 
     public function user() : BelongsTo {
@@ -30,6 +30,16 @@ class Announcement extends Model {
 
     public static function countAttendToRevise() {
         return Announcement::where( 'is_accepted', null )->count();
+    }
+
+    public function scopeAccepted($query)
+    {
+        return $query->where('is_accepted', true);
+    }
+
+    public function scopeRejected($query)
+    {
+        return $query->where('is_accepted', false);
     }
 }
 
