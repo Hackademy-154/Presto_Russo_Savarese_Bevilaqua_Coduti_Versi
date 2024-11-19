@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\PublicController;
-use App\Http\Controllers\RevisorController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\WorkWithUsController;
+use App\Http\Controllers\AnnouncementController;
 
 Route::get( '/', [ PublicController::class, 'home' ] )->name( 'home.page' );
 Route::get( '/announcements/create', [ AnnouncementController::class, 'create' ] )->middleware( 'auth' )->name( 'announcements.create' );
@@ -25,3 +26,8 @@ route::patch( '/reject/{announcement}', [ RevisorController::class, 'reject' ] )
 Route::get( '/revisor/request', [ RevisorController::class, 'requestForRevisor' ] )->middleware( 'auth' )->name( 'revisor.request' );
 // ROTTA PER IMPLEMENTARE COMANDO APP DI ARTISAN SU TASTO EMAIL
 Route::post( '/revisor/make/{user}', [ RevisorController::class, 'makeRevisor' ] )->middleware( 'auth' )->name( 'revisor.make' );
+
+// rotte lavora con noi
+Route::middleware(['auth'])->group(function () {
+    Route::get('/lavora-con-noi', [WorkWithUsController::class, 'showForm'])->name('work.with.us');
+});

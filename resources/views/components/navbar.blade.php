@@ -22,6 +22,9 @@
                     <a class="nav-link active" href="{{ route('announcements.index') }}">Annunci</a>
                 </li>
                 @auth
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('work.with.us') }}">Lavora con Noi</a>
+                </li>
 
                 @endauth
                 <li class="nav-item dropdown">
