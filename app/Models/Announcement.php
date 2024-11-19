@@ -4,13 +4,29 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Announcement extends Model {
+
+    use Searchable;
+
     protected $fillable = [
         'title', 'description', 'price', 'category_id', 'user_id', 'status','reviewed_at'
     ];
+
+    public function toSearchableArray() {
+
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'category' => $this->category,
+
+        ];
+    }
 
     public function user() : BelongsTo {
         return $this->belongsTo( User::class );

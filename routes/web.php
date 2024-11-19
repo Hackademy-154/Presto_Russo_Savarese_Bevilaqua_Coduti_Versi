@@ -31,3 +31,7 @@ Route::post( '/revisor/make/{user}', [ RevisorController::class, 'makeRevisor' ]
 Route::middleware(['auth'])->group(function () {
     Route::get('/lavora-con-noi', [WorkWithUsController::class, 'showForm'])->name('work.with.us');
 });
+
+
+//Rotta per la ricerca
+Route::get( '/search/announcements', [ PublicController::class, 'searchAnnouncements' ] )->name( 'search.announcements' );
