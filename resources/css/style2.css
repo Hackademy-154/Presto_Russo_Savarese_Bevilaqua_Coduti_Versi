@@ -1,0 +1,188 @@
+
+/* !CSS CESSATO */
+.btn-custom {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+        rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: 0.25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform, opacity;
+    z-index: 0;
+    border: #d8b4fc 1px solid;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background-color: #1a1f5c;
+    color: white;
+}
+
+.btn-custom:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+        0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+}
+
+.btn-custom:focus {
+    outline: none;
+    border: 2px solid #d8b4fc;
+}
+
+
+
+
+/* bottoni custom */
+
+
+.formCustom {
+    margin: 0 auto;
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+.dropdown-menu {
+    background: linear-gradient(90deg, #5171ffcb, #ff66c4c3);
+    white-space: nowrap;
+}
+.dropdown-menu1 {
+    min-width: 35vw;
+    width: auto;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: transparent; /* placeholder */
+    color: #000000; /*placeholder del testo*/
+}
+
+.dropdown-item {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.dropdown-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.5)
+    );
+    border-radius: 15px;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.dropdown-item:hover::before {
+    left: 0;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: transparent;
+}
+
+.dropdown-item:hover #textDrop {
+    z-index: 1000;
+}
+
+/* ! Footer */
+
+footer {
+    padding-left: 2vw;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background-footer {
+    background-color: #a8bbf1;
+    border-radius: 10px;
+}
+
+
+
+/* ! index articoli */
+.dimensionepagina {
+    min-height: 100vh;
+}
+
+/* ! Revisor zone */
+.revisorButton {
+    display: flex; /* Allinea gli elementi orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.revisorButton .badge {
+    position: absolute; /* Assicura che il badge rimanga nella sua posizione */
+    transform: translate(
+        50%,
+        -50%
+    ); /* Centra il badge rispetto al punto di ancoraggio */
+    top: 0; /* Margine superiore */
+    left: auto; /* Evita problemi di allineamento */
+}
+
+@media (max-width: 576px) {
+    .revisorButton {
+        flex-direction: column; /* Allinea verticalmente nei dispositivi piccoli */
+    }
+
+    .revisorButton .badge {
+        transform: translate(50%, 0); /* Riposiziona il badge */
+    }
+}
+
+@media (max-width: 768px) {
+    footer .row {
+        text-align: center; /* Centra il testo */
+    }
+
+    footer .col-12 {
+        display: flex; /* Usa il layout flexbox */
+        flex-direction: column; /* Allinea verticalmente */
+        align-items: center; /* Centra gli elementi */
+    }
+}
