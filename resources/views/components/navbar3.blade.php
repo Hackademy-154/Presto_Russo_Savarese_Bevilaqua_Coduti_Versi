@@ -5,20 +5,23 @@
             presto.it
         </a>
 
-        <!-- Search Bar -->
-        <div class="search-box mx-auto position-relative d-none d-lg-block">
-            <i class="bi bi-search position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%);"></i>
-            <input placeholder="Cerca . . ." type="text" class="form-control ps-5">
-        </div>
+        <!-- Barra di ricerca e Mobile Controls (tutto sulla stessa linea) -->
+        <div class="d-flex align-items-center w-100">
+            <!-- Barra di ricerca -->
+            <div class="search-box me-3 w-100">
+                <form role="search" action="{{ route('search.announcements') }}" method="GET" class="d-flex align-items-center w-100">
+                    @csrf
+                    <!-- Campo di ricerca -->
+                    <input placeholder="Cerca..." name="query" type="search" class="form-control me-2" style="max-width: 300px;" />
 
-        <!-- Mobile Controls -->
-        <div class="d-flex align-items-center">
-            <!-- Lente Mobile -->
-            <div class="d-lg-none me-2">
-                <i class="bi bi-search" style="font-size: 1.5rem; color: var(--main-bg-color);"></i>
+                    <!-- Bottone con icona -->
+                    <button type="submit" class="btn btn-link p-0">
+                        <i class="bi bi-search fs-5"></i>
+                    </button>
+                </form>
             </div>
 
-            <!-- Mobile Toggle -->
+            <!-- Mobile Toggle (hamburger menu) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,13 +30,18 @@
 
         <!-- Navbar Collapse -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <div class="ms-auto d-flex flex-column align-items-center align-items-lg-end">
+            <div class="ms-auto d-flex align-items-center">
                 @auth
                 <!-- Dropdown Utente Autenticato -->
-                <div class="dropdown">
-                    <button class="btn btn-outline-primary dropdown-toggle me-2 w-100 mb-2" type="button" id="userDropdown"
+                <div class="dropdown me-2">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="userDropdown"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Ciao, {{ Auth::user()->name }}
+                        @if (Auth::user()->is_revisor)
+                        <span class="badge top-50 translate-middle-y rounded-pill bg-danger">
+                            {{ \App\Models\Announcement::countAttendToRevise() }}
+                        </span>
+                        @endif
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <li>
@@ -44,20 +52,35 @@
                                 </button>
                             </form>
                         </li>
+                        @if (Auth::user()->is_revisor)
+                        <li class="nav-item revisorButton">
+                            <a class="pl-4 dropdown-item" href="{{ route('revisor.index') }}">
+                                Zona Revisor
+                            </a>
+                        </li>
+                        @else
+                        <li class="nav-item revisorButton">
+                            <a class="pl-4 dropdown-item" href="{{ route('work.with.us') }}">
+Diventa Revisore
+                            </a>
+                        </li>
+                        @endif
+
+
                     </ul>
                 </div>
-                <!-- Pulsante Vendi -->
-                <a class="btn btn-primary w-100" href="{{ route('announcements.create') }}">
-                    <i class="bi bi-box-arrow-up"></i> Vendi
-                </a>
                 @else
-                <!-- Pulsante Registrati o Accedi -->
-                <a class="btn btn-outline-primary w-100 mb-2" href="{{ route('register') }}">Registrati o accedi</a>
+                <!-- Pulsanti Registrati e Accedi (Affiancati) -->
+                <div class="d-flex me-2">
+                    <a class="btn btn-outline-primary me-2" href="{{ route('register') }}">Registrati</a>
+                    <a class="btn btn-outline-primary" href="{{ route('login') }}">Accedi</a>
+                </div>
+                @endauth
+
                 <!-- Pulsante Vendi -->
-                <a class="btn btn-primary w-100" href="{{ route('announcements.create') }}">
+                <a class="btn btn-primary" href="{{ route('announcements.create') }}">
                     <i class="bi bi-box-arrow-up"></i> Vendi
                 </a>
-                @endauth
             </div>
         </div>
     </div>
@@ -66,25 +89,37 @@
 <!-- Sezione Categorie -->
 <div class="categories-bar border-top border-bottom py-2">
     <div class="container-fluid">
-        <ul class="categories-list d-flex m-0 p-0">
-            <li class="category-item me-3">
-                <a href="#" class="category-link">Abbigliamento</a>
+        <!-- Lista orizzontale visibile su dispositivi medi e grandi -->
+        <ul class="categories-list d-flex justify-content-center m-0 p-0 d-none d-md-flex">
+            @foreach ($categories as $category)
+            <li class="category-item me-3 list-unstyled">
+                <a href="{{ route('byCategory', ['category' => $category]) }}" class="category-link text-decoration-none">
+                    {{ $category->name }}
+                </a>
             </li>
-            <li class="category-item me-3">
-                <a href="#" class="category-link">Arte</a>
-            </li>
-            <li class="category-item me-3">
-                <a href="#" class="category-link">Elettronica</a>
-            </li>
-            <li class="category-item me-3">
-                <a href="#" class="category-link">Elettrodomestici</a>
-            </li>
-            <li class="category-item me-3">
-                <a href="#" class="category-link">Giocattoli</a>
-            </li>
-            <li class="category-item me-3">
-                <a href="#" class="category-link">Libri</a>
-            </li>
+            @endforeach
         </ul>
+
+        <!-- Dropdown per dispositivi piccoli -->
+        <div class="d-block d-md-none">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle w-100" type="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Seleziona una categoria
+                </button>
+                <ul class="dropdown-menu p-2" aria-labelledby="categoriesDropdown" style="min-width: 100%;">
+                    <div class="row">
+                        @foreach ($categories as $category)
+                        <div class="col-6 mb-2">
+                            <li>
+                                <a class="dropdown-item text-center" href="{{ route('byCategory', ['category' => $category]) }}">
+                                    {{ $category->name }}
+                                </a>
+                            </li>
+                        </div>
+                        @endforeach
+                    </div>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
