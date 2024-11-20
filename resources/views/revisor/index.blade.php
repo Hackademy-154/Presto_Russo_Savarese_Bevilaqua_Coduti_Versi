@@ -1,39 +1,15 @@
 <x-layout>
     <div class="container">
+
     @if (session()->has('message'))
     <div class="row justify-content-center">
         <div class="col-12 alert alert-success text-center shadow rounded">
             {{ session('message') }}
         </div>
     </div>
-    <div class="sidebar-section">
-        <h5>Ultimi annunci accettati</h5>
-        <ul>
-            @forelse ($lastAccepted as $announcement)
-                <li>
-                    {{ $announcement->title }} - 
-                    <small>{{ $announcement->updated_at->format('d/m/Y H:i') }}</small>
-                </li>
-            @empty
-                <li>Nessun annuncio accettato recentemente.</li>
-            @endforelse
-        </ul>
-    
-        <h5>Ultimi annunci rifiutati</h5>
-        <ul>
-            @forelse ($lastRejected as $announcement)
-                <li>
-                    {{ $announcement->title }} - 
-                    <small>{{ $announcement->updated_at->format('d/m/Y H:i') }}</small>
-                </li>
-            @empty
-                <li>Nessun annuncio rifiutato recentemente.</li>
-            @endforelse
-        </ul>
-    </div>
-    
     @endif
-    {{-- <div class="container-fluid pt-5"> --}}
+
+     <div class="container-fluid pt-5"> 
         <div class="row mt-5 justify-content-center">
             <div class="col-12 col-md-6">
                 <div class="rounded shadow bg-body-secondary">
@@ -43,6 +19,24 @@
                 </div>
             </div>
         </div>
+        
+    <div class="container mt-4">
+        <div class="row ">
+            <div class="col-6 d-flex justify-content-center">
+                <form action="{{route('revisor.reviewAccepted')}}" method="GET">
+                    @csrf
+                    <button type="submit" class="btn btn-custom">Rivedi Annunci Accettati</button>
+                </form>
+            </div>   
+            <div class="col-6 d-flex justify-content-center">
+               
+                <form action="{{route('revisor.reviewRejected')}}" method="GET">
+                    @csrf
+                    <button type="submit" class="btn btn-custom">Rivedi Annunci Rifiutati</button>
+                </form>
+            </div> 
+        </div>
+    </div>
         @if ($announcement_to_check)
             <div class="row justify-content-center pt-5">
                 <div class="col-md-8">
@@ -65,12 +59,12 @@
                         <p class="h6">{{ $announcement_to_check->description }}</p>
                     </div>
                     <div class="d-flex pb-4 justify-content-around">
-                        <form action="{{route('accept', ['announcement' => $announcement_to_check])}}" method="POST">
+                        <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
                             <button type="submit" class="btn btn-custom">Accetta Annuncio</button>
                         </form>
-                        <form action="{{route('reject', ['announcement' => $announcement_to_check])}}" method="POST">
+                        <form action="{{ route('revisor.reject', ['announcement' => $announcement_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
                             <button type="submit" class="btn btn-custom">Rifiuta Annuncio</button>
@@ -88,5 +82,6 @@
                 </div>
             </div>
         @endif
+
     </div>
 </x-layout>
