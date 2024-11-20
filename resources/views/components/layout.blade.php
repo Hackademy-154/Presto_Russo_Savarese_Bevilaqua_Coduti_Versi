@@ -10,7 +10,7 @@
 </head>
 
 <body class="background-color">
-    <x-navbar />
+    <x-navbar2 />
 
     <main>
         {{ $slot }}

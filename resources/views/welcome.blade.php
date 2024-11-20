@@ -69,7 +69,8 @@
             <h2 class="section-title">Ecco i nostri ultimi sei annunci</h2>
             <div class="row justify-content-center px-5">
                 @forelse($announcements as $announcement)
-                    <div class="col-12 col-md-6 col-lg-4 announcement-card">
+                <div class="col-12 col-md-6 col-lg-4 announcement-card">
+                    <a href="{{ route('announcements.show', $announcement->id) }}" class="card-link" style="text-decoration: none; color: inherit;">
                         <div class="card">
                             <img src="https://picsum.photos/200" class="card-img-top" alt="{{ $announcement->title }}">
 
@@ -79,7 +80,8 @@
                                 <p class="card-price">{{ $announcement->price }} €</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
                 @empty
                     <div class="col-12">
                         <p class="no-announcements">Non ci sono annunci disponibili al momento.</p>
