@@ -174,15 +174,3 @@ footer {
         transform: translate(50%, 0); /* Riposiziona il badge */
     }
 }
-
-@media (max-width: 768px) {
-    footer .row {
-        text-align: center; /* Centra il testo */
-    }
-
-    footer .col-12 {
-        display: flex; /* Usa il layout flexbox */
-        flex-direction: column; /* Allinea verticalmente */
-        align-items: center; /* Centra gli elementi */
-    }
-}
