@@ -15,12 +15,17 @@ Route::get( '/announcements/{announcement}', [ AnnouncementController::class, 's
 // Rotte Categorie
 Route::get( '/category/{category}', [ AnnouncementController::class, 'byCategory' ] )->name( 'byCategory' );
 
+
 // Rotte per i revisori
 route::get( '/revisor/index', [ RevisorController::class, 'index' ] )->middleware( 'isRevisor' )->name( 'revisor.index' );
 // INSERISCE NEL PATH TRUE
-route::patch( '/accept/{announcement}', [ RevisorController::class, 'accept' ] )->name( 'accept' );
+route::patch( 'revisor/accept/{announcement}', [ RevisorController::class, 'accept' ] )->name( 'revisor.accept' );
 // INSERISCE NEL PATH FALSE
-route::patch( '/reject/{announcement}', [ RevisorController::class, 'reject' ] )->name( 'reject' );
+route::patch( 'revisor/reject/{announcement}', [ RevisorController::class, 'reject' ] )->name( 'revisor.reject' );
+//LISTE DI ANNUNCI ACCETTATI E RIFIUTATI
+Route::get('/revisor/review-accepted', [RevisorController::class, 'reviewAccepted'])->name('revisor.reviewAccepted');
+Route::get('/revisor/review-rejected', [RevisorController::class, 'reviewRejected'])->name('revisor.reviewRejected');
+
 
 // Rotte per la accetazione Revisor
 Route::get( '/revisor/request', [ RevisorController::class, 'requestForRevisor' ] )->middleware( 'auth' )->name( 'revisor.request' );
