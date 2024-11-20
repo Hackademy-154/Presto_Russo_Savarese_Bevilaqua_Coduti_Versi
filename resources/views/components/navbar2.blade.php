@@ -69,6 +69,19 @@
             <a class="btn btn-primary" href="{{ route('announcements.create') }}">
                 <i class="bi bi-box-arrow-up"></i> Vendi
             </a>
+{{-- ! Language --}}
+            {{-- <div class="dropdown mx-2">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Lingua
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+        <li><a class="dropdown-item" href="#">Italiano</a></li>
+        <li><a class="dropdown-item" href="#">English</a></li>
+        <li><a class="dropdown-item" href="#">Español</a></li>
+    </ul>
+</div> --}}
+
         </div>
     </div>
 </nav>
