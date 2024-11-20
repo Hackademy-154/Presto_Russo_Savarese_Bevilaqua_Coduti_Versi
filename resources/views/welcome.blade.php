@@ -64,35 +64,29 @@
 
 
     {{-- Sezione ultimi annunci --}}
-<section class="latest-announcements">
-
-
-
-
     <section class="latest-announcements">
-    <div class="container text-center">
-        <h2 class="section-title">Ecco i nostri ultimi sei annunci</h2>
-        <div class="row justify-content-center">
-            @forelse($announcements as $announcement)
-                <div class="col-12 col-md-6 col-lg-4 announcement-card">
-                    <div class="card">
-                        <img src="{{ $announcement->image }}" class="card-img-top" alt="{{ $announcement->title }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p class="card-text">{{ $announcement->description }}</p>
-                            <p class="card-price">{{ $announcement->price }} €</p>
+        <div class="container text-center">
+            <h2 class="section-title">Ecco i nostri ultimi sei annunci</h2>
+            <div class="row justify-content-center px-5">
+                @forelse($announcements as $announcement)
+                    <div class="col-12 col-md-6 col-lg-4 announcement-card">
+                        <div class="card">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="{{ $announcement->title }}">
+
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $announcement->title }}</h5>
+                                <p class="card-text">{{ $announcement->description }}</p>
+                                <p class="card-price">{{ $announcement->price }} €</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @empty
-                <div class="col-12">
-                    <p class="no-announcements">Non ci sono annunci disponibili al momento.</p>
-                </div>
-            @endforelse
+                @empty
+                    <div class="col-12">
+                        <p class="no-announcements">Non ci sono annunci disponibili al momento.</p>
+                    </div>
+                @endforelse
+            </div>
+            <a href="{{ route('announcements.index') }}" class="btn btn-primary mt-4">Vedi Annunci</a>
         </div>
-        <a href="{{ route('announcements.index') }}" class="btn btn-primary mt-4">Vedi Annunci</a>
-    </div>
-</section>
-
-
+    </section>
 </x-layout>
