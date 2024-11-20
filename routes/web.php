@@ -23,7 +23,7 @@ route::patch( '/accept/{announcement}', [ RevisorController::class, 'accept' ] )
 route::patch( '/reject/{announcement}', [ RevisorController::class, 'reject' ] )->name( 'reject' );
 
 // Rotte per la accetazione Revisor
-Route::get( '/revisor/request', [ RevisorController::class, 'requestForRevisor' ] )->middleware( 'auth' )->name( 'revisor.request' );
+Route::post( '/revisor/request', [ RevisorController::class, 'requestForRevisor' ] )->middleware( 'auth' )->name( 'revisor.request' );
 // ROTTA PER IMPLEMENTARE COMANDO APP DI ARTISAN SU TASTO EMAIL
 Route::post( '/revisor/make/{user}', [ RevisorController::class, 'makeRevisor' ] )->middleware( 'auth' )->name( 'revisor.make' );
 

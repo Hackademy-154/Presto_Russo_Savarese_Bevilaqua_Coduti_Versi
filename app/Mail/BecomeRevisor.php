@@ -13,12 +13,10 @@ use Illuminate\Queue\SerializesModels;
 class BecomeRevisor extends Mailable {
     use Queueable, SerializesModels;
 
-    /**
-    * Create a new message instance.
-    */
+
     public $user;
 
-    public function __construct( User $user ) {
+    public function __construct( User $user, ) {
         $this->user = $user;
     }
 
@@ -48,7 +46,15 @@ class BecomeRevisor extends Mailable {
     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
     */
 
-    public function attachments(): array {
-        return [];
+
+    public function build(){
+    return $this->view('mail.become-revisor')
+                ->subject('Rendi Revisore L\'Utente : ' .$this->user->name);
+
+                // ->attach(storage_path($this->cvPath), [
+                //     'as' => 'cv.pdf',
+                //     'mime' => 'application/pdf',
+                //     ])  ;
+    
     }
 }

@@ -38,7 +38,26 @@
                             guida</li>
                         <li><i class="bi bi-check-circle text-success"></i> Collaborazione con un team di esperti</li>
                     </ul>
-                    <a href="{{ route('revisor.request') }}" class="btn btn-success btn-lg mt-4">Inizia ora come Revisore</a>
+                    <form action="{{ route('revisor.request') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nickname</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        {{-- <div class="mb-3">
+                            <label for="description" class="form-label">Motivazione</label>
+                            <input type="description" class="form-control" id="description" name="description" required>
+                        </div> --}}
+                        {{-- <div class="mb-3">
+                            <label for="cv" class="form-label">Carica il tuo CV</label>
+                            <input type="file" class="form-control" id="cv" name="cv" required>
+                        </div> --}}
+                        <button type="submit" class="btn btn-success btn-lg mt-4">Invia Richiesta</button>
+                    </form>
                 </div>
             </div>
         </section>
