@@ -71,7 +71,8 @@
                 @forelse($announcements as $announcement)
                     <div class="col-12 col-md-4 col-lg-2 announcement-card">
                         <div class="card">
-                            <img src="{{ $announcement->image }}" class="card-img-top" alt="{{ $announcement->title }}">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="{{ $announcement->title }}">
+                            
                             <div class="card-body">
                                 <h5 class="card-title">{{ $announcement->title }}</h5>
                                 <p class="card-text">{{ $announcement->description }}</p>
