@@ -10,6 +10,10 @@
                 <br>
 
             </ul>
+
+        </div>
+
+        <div class="col-12 col-md-3 mb-2">
             <h5 class="fw-bold"><i class="bi bi-info-circle"></i> Policy</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Termini di
@@ -53,19 +57,13 @@
             </ul>
         </div>
 
-        <div class="col-12 col-md-3 mb-2">
-            <h5 class="text-start fw-bold bi bi-person-workspace "> Lavora Con Noi</h5>
-            <p class="text-start text-nowrap " style="font-size: 15px">Cliccando Il Bottone SottoStante <br> Farai Una
-                Richiesta Al Nostro Amministratore</p>
-            <a href="{{ route('revisor.request') }}" class="btn btn-info">Diventa Un Revisor</a>
-        </div>
     </div>
 
     {{-- ! Top footer end, bottom footer start --}}
 
     <!-- Flags e Copyright -->
     <div class="d-flex flex-wrap justify-content-between align-items-center py-2 border-top">
-        <div class="d-flex flex-wrap justify-content-center">
+        {{-- <div class="d-flex flex-wrap justify-content-center">
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
                     src="{{ asset('icons/icons8-islanda-circolare-96.png') }}" alt="Islanda"></a>
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
@@ -82,7 +80,7 @@
                     src="{{ asset('icons/icons8-france-96.png') }}" alt="Francia"></a>
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
                     src="{{ asset('icons/icons8-circolare-italia-48.png') }}" alt="Italia"></a>
-        </div>
+        </div> --}}
         <p class="mx-3 text-center fw-bold justify-item-center">© 2024 Presto.it</p>
     </div>
 </footer>
