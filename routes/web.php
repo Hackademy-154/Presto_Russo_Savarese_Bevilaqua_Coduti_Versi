@@ -28,9 +28,9 @@ Route::get('/revisor/review-rejected', [RevisorController::class, 'reviewRejecte
 
 
 // Rotte per la accetazione Revisor
-Route::post( '/revisor/request', [ RevisorController::class, 'requestForRevisor' ] )->middleware( 'auth' )->name( 'revisor.request' );
+Route::get( '/revisor/request', [ RevisorController::class, 'becomeRevisor' ] )->middleware( 'auth' )->name( 'become.revisor' );
 // ROTTA PER IMPLEMENTARE COMANDO APP DI ARTISAN SU TASTO EMAIL
-Route::post( '/revisor/make/{user}', [ RevisorController::class, 'makeRevisor' ] )->middleware( 'auth' )->name( 'revisor.make' );
+Route::get( '/revisor/make/{user}', [ RevisorController::class, 'makeRevisor' ] )->middleware( 'auth' )->name( 'revisor.make' );
 
 // rotte lavora con noi
 Route::middleware(['auth'])->group(function () {

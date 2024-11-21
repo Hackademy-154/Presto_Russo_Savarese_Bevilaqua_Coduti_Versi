@@ -17,7 +17,7 @@
             <p>{{$user->name}}</p>
             <p>Email: </p>
             <p>{{$user->email}}</p>
-            <p>Motivazione :</p>
+            
 
             <p>Premi Questo Tasto per Rendere L'Utente Un Revisor</p>
             <a class="btn btn-success" href="{{route('revisor.make',compact('user'))}}">Rendi Revisor {{$user->name}} </a>

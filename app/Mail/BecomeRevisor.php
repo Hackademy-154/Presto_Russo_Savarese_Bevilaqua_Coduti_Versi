@@ -16,15 +16,16 @@ class BecomeRevisor extends Mailable {
 
     public $user;
 
-    public function __construct( User $user, ) {
+    public function __construct( User $user ) {
+        if ($user === null) {
+            // Puoi loggare o gestire l'errore
+            throw new \Exception('User not found');
+        }
         $this->user = $user;
     }
 
-    /**
-    * Get the message envelope.
-    */
-
     public function envelope(): Envelope {
+        
         return new Envelope(
             subject: 'Rendi Revisore L\'Utente : ' .$this->user->name,
         );
@@ -39,22 +40,7 @@ class BecomeRevisor extends Mailable {
             view: 'mail.become-revisor',
         );
     }
-
-    /**
-    * Get the attachments for the message.
-    *
-    * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-    */
-
-
-    public function build(){
-    return $this->view('mail.become-revisor')
-                ->subject('Rendi Revisore L\'Utente : ' .$this->user->name);
-
-                // ->attach(storage_path($this->cvPath), [
-                //     'as' => 'cv.pdf',
-                //     'mime' => 'application/pdf',
-                //     ])  ;
-    
-    }
 }
+
+
+

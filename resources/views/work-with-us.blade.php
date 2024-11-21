@@ -2,7 +2,7 @@
 
 
     @if (session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success text-center">
             {{ session('success') }}
         </div>
     @endif
@@ -37,27 +37,9 @@
                         <li><i class="bi bi-check-circle text-success"></i> Accettazione o rifiuto basato sulle linee
                             guida</li>
                         <li><i class="bi bi-check-circle text-success"></i> Collaborazione con un team di esperti</li>
+                        
+                        <a href="{{route('become.revisor')}}" class="btn btn-custom">Diventa un Revisore</a>
                     </ul>
-                    <form action="{{ route('revisor.request') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nickname</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Motivazione</label>
-                            <textarea type="text" cols="30" rows="10" class="form-control" id="description" name="description" required> </textarea>
-                        </div>
-                        {{-- <div class="mb-3">
-                            <label for="cv" class="form-label">Carica il tuo CV</label>
-                            <input type="file" class="form-control" id="cv" name="cv" required>
-                        </div> --}}
-                        <button type="submit" class="btn btn-custom btn-lg mt-4">Invia Richiesta</button>
-                    </form>
                 </div>
             </div>
         </section>
