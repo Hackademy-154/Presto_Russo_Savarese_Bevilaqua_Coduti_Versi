@@ -48,15 +48,15 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                        {{-- <div class="mb-3">
+                        <div class="mb-3">
                             <label for="description" class="form-label">Motivazione</label>
-                            <input type="description" class="form-control" id="description" name="description" required>
-                        </div> --}}
+                            <textarea type="text" cols="30" rows="10" class="form-control" id="description" name="description" required> </textarea>
+                        </div>
                         {{-- <div class="mb-3">
                             <label for="cv" class="form-label">Carica il tuo CV</label>
                             <input type="file" class="form-control" id="cv" name="cv" required>
                         </div> --}}
-                        <button type="submit" class="btn btn-success btn-lg mt-4">Invia Richiesta</button>
+                        <button type="submit" class="btn btn-custom btn-lg mt-4">Invia Richiesta</button>
                     </form>
                 </div>
             </div>

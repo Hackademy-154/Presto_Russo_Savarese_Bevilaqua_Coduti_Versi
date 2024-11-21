@@ -42,7 +42,14 @@ class RevisorController extends Controller {
         return view( 'revisor.reviewRejected', compact( 'rejectedAnnouncements' ) );
     }
 
-    public function requestForRevisor() {
+    public function requestForRevisor(Request $request) {
+        $request->validate( [
+            
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'description' => 'required|string|max:255',
+        ] );
+        
         Mail::to( 'admin@presto.it' )->send( new BecomeRevisor( Auth::user() ) );
         return redirect()->route( 'home.page' )->with( 'message', 'La Tua Richiesta Per Diventare Revisor del Sito inviata correttamente' );
     }
