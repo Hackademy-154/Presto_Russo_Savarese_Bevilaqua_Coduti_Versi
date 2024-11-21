@@ -63,8 +63,8 @@ body {
     font-size: 1.5rem;
 }
 
-.navbar-width1{
-    min-width: 50vw ;
+.navbar-width1 {
+    min-width: 50vw;
 }
 
 /* #endregion */
@@ -111,9 +111,6 @@ body {
 .navbar .search-box input:hover {
     background: var(--navbar-hover-color);
 }
-
-
-
 
 /* #endregion */
 
@@ -179,6 +176,11 @@ body {
 
 /* #endregion */
 
+/* ! Input */
+/* #region  */
+
+/* #endregion */
+
 /*! #Categorie  */
 /* #region  */
 
@@ -239,7 +241,6 @@ body {
     border-radius: 10px; /* Immagine con angoli arrotondati */
     transition: transform 0.3s ease;
     max-height: 65vh;
-
 }
 
 /* #endregion */
@@ -247,8 +248,8 @@ body {
 /* ! Hero section */
 /* #region  */
 
-.landingbox1{
-min-width: 31%;
+.landingbox1 {
+    min-width: 31%;
 }
 
 .hero-section {
@@ -297,7 +298,6 @@ min-width: 31%;
 
 /* Immagine nella Hero Section */
 .hero-section img {
-
     /* border-radius: 20px;  */
     /* Arrotonda i bordi dell'immagine */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aggiunge un'ombra elegante */
@@ -427,17 +427,17 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-/* min-height: 50vh; */
-      }
+        /* min-height: 50vh; */
+    }
 
-      .center-sd img {
+    .center-sd img {
         display: block;
         margin: 0 auto; /* Per assicurare il centraggio orizzontale */
         max-width: 93vw; /* Per evitare overflow */
         min-height: 20vh; /* Mantiene le proporzioni */
-      }
+    }
 
-      footer .row {
+    footer .row {
         text-align: center; /* Centra il testo */
     }
 
@@ -446,6 +446,5 @@ footer {
         flex-direction: column; /* Allinea verticalmente */
         align-items: center; /* Centra gli elementi */
     }
-
 }
 /* #endregion */

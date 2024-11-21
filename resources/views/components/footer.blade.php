@@ -1,7 +1,7 @@
 <footer class="py-3 container-fluid background-footer mt-5">
-    <div class="px-3 row justify-content-between">
+    <div class="px-3 row justify-content-evenly">
         <!-- Aiuto & Contatti -->
-        <div class="col-12 col-md-3 mb-2">
+        <div class="col-12 col-md-2 mb-2">
             <h5 class="text-nowrap fw-bold text-start"><i class="bi bi-question-circle"></i> Aiuto & Contatti</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Pagamenti</a></li>
@@ -13,7 +13,7 @@
 
         </div>
 
-        <div class="col-12 col-md-3 mb-2">
+        <div class="col-12 col-md-2 mb-2">
             <h5 class="fw-bold"><i class="bi bi-info-circle"></i> Policy</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Termini di
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Partners -->
-        <div class="col-12 col-md-3 mb-2">
+        <div class="col-12 col-md-2 mb-2">
             <h5 class="fw-bold"><i class="bi bi-truck"></i> Partners</h5>
             <ul class="nav flex-wrap align-items-start">
                 <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img
@@ -45,14 +45,14 @@
 
 
         <!-- Social -->
-        <div class="col-12 col-md-3 mb-2">
+        <div class="col-12 col-md-2 mb-2">
             <h5 class="text-start fw-bold">SEGUICI SUI SOCIAL</h5>
             <ul class="list-unstyled d-flex align-items-star">
-                <li class="mx-2"><a href="#"><i class="text-black bi bi-facebook"
+                <li class="mx-2"><a href="https://www.facebook.com"><i class="text-black bi bi-facebook"
                             style="font-size: 3.1rem;"></i></a></li>
-                <li class="mx-2"><a href="#"><i class="text-black bi bi-twitter-x"
+                <li class="mx-2"><a href="https://x.com"><i class="text-black bi bi-twitter-x"
                             style="font-size: 3.1rem;"></i></a></li>
-                <li class="mx-2"><a href="#"><i class="text-black bi bi-instagram"
+                <li class="mx-2"><a href="https://www.instagram.com"><i class="text-black bi bi-instagram"
                             style="font-size: 3.1rem;"></i></a></li>
             </ul>
         </div>
@@ -62,7 +62,7 @@
     {{-- ! Top footer end, bottom footer start --}}
 
     <!-- Flags e Copyright -->
-    <div class="d-flex flex-wrap justify-content-between align-items-center py-2 border-top">
+    {{-- <div class="d-flex flex-wrap align-items-center py-2 border-top"> --}}
         {{-- <div class="d-flex flex-wrap justify-content-center">
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
                     src="{{ asset('icons/icons8-islanda-circolare-96.png') }}" alt="Islanda"></a>
@@ -82,5 +82,5 @@
                     src="{{ asset('icons/icons8-circolare-italia-48.png') }}" alt="Italia"></a>
         </div> --}}
         <p class="mx-3 text-center fw-bold justify-item-center">© 2024 Presto.it</p>
-    </div>
+    {{-- </div> --}}
 </footer>

@@ -24,7 +24,7 @@
             </div>
 
             <!-- Mobile Toggle (hamburger menu) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -80,9 +80,25 @@
                 @endauth
 
                 <!-- Pulsante Vendi -->
-                <a class="btn btn-primary" href="{{ route('announcements.create') }}">
+                <a class="btn btn-primary pt-2 pb-2" href="{{ route('announcements.create') }}">
                     <i class="bi bi-box-arrow-up"></i> Vendi
                 </a>
+
+                {{-- ! Language --}}
+                <!-- Language Dropdown -->
+                <div class="mx-1 dropdown">
+                    <button class="btn btn-primary btn-outline-secondary dropdown-toggle" type="button"
+                        id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Lingua
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#">Italiano</a></li>
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">Español</a></li>
+                    </ul>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -93,6 +109,11 @@
     <div class="container-fluid">
         <!-- Lista orizzontale visibile su dispositivi medi e grandi -->
         <ul class="categories-list d-flex justify-content-center m-0 p-0 d-none d-md-flex">
+            <li class="category-item me-3 list-unstyled">
+                <a href="{{ route('announcements.index') }}" class="category-link text-decoration-none">
+                    Tutti gli articoli
+                </a>
+            </li>
             @foreach ($categories as $category)
                 <li class="category-item me-3 list-unstyled">
                     <a href="{{ route('byCategory', ['category' => $category]) }}"
@@ -112,6 +133,15 @@
                 </button>
                 <ul class="dropdown-menu p-2" aria-labelledby="categoriesDropdown" style="min-width: 100%;">
                     <div class="row">
+                        <div class="col-6 mb-2">
+
+                            <li>
+                                <a class="dropdown-item text-center" href="{{ route('announcements.index') }}"
+                                    class="category-link text-decoration-none">
+                                    Tutti gli articoli
+                                </a>
+                            </li>
+                        </div>
                         @foreach ($categories as $category)
                             <div class="col-6 mb-2">
                                 <li>

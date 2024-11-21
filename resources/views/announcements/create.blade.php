@@ -6,18 +6,17 @@
 
 
     <div class="container">
-        <div class="row wh-100 d-flex justify-content-center">
-            <div class="col-12 col-md-6 text-center mt-5">
-                <h1>CREA ARTICOLO</h1>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-12 text-start mt-5">
+                <h1>Inserisci il tuo articolo</h1>
             </div>
         </div>
     </div>
-      
 
 
 <livewire:create-annuncements-form />
-    
+
+
 
 
 </x-layout>
