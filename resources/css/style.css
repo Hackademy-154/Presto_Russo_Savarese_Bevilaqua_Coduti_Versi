@@ -67,7 +67,7 @@ body {
     min-width: 50vw;
 }
 
-.navbar-flag{
+.navbar-flag {
     max-width: 70px;
 }
 
@@ -75,7 +75,7 @@ body {
     border: none;
 }
 
-.flag-dropdown{
+.flag-dropdown {
     --bs-dropdown-min-width: none;
 }
 
@@ -190,12 +190,10 @@ body {
 
 /* ! Input */
 /* #region  */
-.image-input1{
+.image-input1 {
     min-height: 50vh;
     min-width: 75vw;
 }
-
-
 
 /* #endregion */
 
@@ -320,6 +318,54 @@ body {
     /* Arrotonda i bordi dell'immagine */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aggiunge un'ombra elegante */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto di transizione */
+}
+/* #endregion */
+
+/*! Register e login  */
+/* #region  */
+
+.registration-box,
+.login-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.registration-title,
+.login-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #696969;
+    margin-bottom: 20px;
+}
+
+.registration-title .highlight,
+.login-title .highlight {
+    color: var(--main-bg-color);
+}
+
+.form-column,
+.image-column {
+
+    padding: 20px 40px;
+}
+.form-group {
+    margin-bottom: 20px; /* Aumenta lo spazio tra i campi */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--main-bg-color);
+    box-shadow: 0 0 5px var(--main-bg-color);
+    outline: none;
 }
 /* #endregion */
 
