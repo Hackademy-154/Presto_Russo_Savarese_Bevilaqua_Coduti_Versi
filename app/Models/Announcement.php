@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Category;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Announcement extends Model {
@@ -57,5 +58,14 @@ class Announcement extends Model {
     {
         return $query->where('is_accepted', false);
     }
+
+// Funzione di relazione per Limmagine
+
+    public function images() : HasMany {
+        return $this->hasMany( Image::class );
+    }
+
 }
+
+
 

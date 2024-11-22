@@ -21,17 +21,34 @@
 
                 <div class="row m-3 p-0 justify-content-between border border-dashed border-secondary rounded">
                     <div class="col-12 input-group p-0 m-0">
-                        <input type="title"
-                            class="form-control image-input1 p-0  @error('title') is-invalid @enderror " id="title"
-                            wire:model.live.blur="title">
+                        <input type="file"  wire:model.live.blur="temporary_images" multiple
+                         class="form-control image-input1 p-0  @error('temporary_images') is-invalid @enderror "
+                            placeholder="img/">
                         <button class="btn btn-success"> <i class="bi bi-folder-plus"></i> Carica le foto</button>
+
+                        @error('temorary_images, *')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        @error('temporary_images')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
-
-                    @error('title')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
                 </div>
-
+                @if(!empty($images))
+                <div class="row">
+                    <div class="col-12">
+                        <p>Anteprima Foto</p>
+                        <div class="row border border-secondary rounded shadow py-4">
+                            @foreach ($images as $key => $image)
+                                <div class="col d-flex flex-column align-items-center">
+                                    <div class="img-preview mx-auto shadow rounded"
+                                        style="background-image: url('{{ $image->temporaryUrl() }}')"></div>
+                                    </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                @endif
                 <div class="row m-3 p-3 pb-3 justify-content-between border border-secondary rounded">
                     <div class="col-3">
                         <label for="title" class="form-label w-50">
