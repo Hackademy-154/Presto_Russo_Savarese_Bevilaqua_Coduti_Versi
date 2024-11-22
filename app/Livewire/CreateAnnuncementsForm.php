@@ -32,7 +32,9 @@ class CreateAnnuncementsForm extends Component {
             'title'=>'required|min:4',
             'description'=>'required|min:10',
             'price'=>'required|numeric',
-            'selectedCategory'=>'required'
+            'selectedCategory'=>'required',
+            'temporary_images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'temporary_images' => 'max:6|max:2048'
         ];
     }
 
@@ -43,6 +45,9 @@ class CreateAnnuncementsForm extends Component {
             'description.min'=>'Devi inseire in :attribute almeno un testo di 10 lettere ',
             'price.required'=>'Seleziona almeno una :attribute ',
             'selectedCategory.required' => 'Seleziona almeno una categoria',
+            'temporary_images.max' => 'Non puoi caricare più di 6 immagini',
+            'temporary_images.*.image' => 'Non puoi caricare file non immagini',
+            
             // 'title.required' => 'A title is required',
             // 'body.required' => 'A message is required',
         ];
@@ -78,7 +83,7 @@ class CreateAnnuncementsForm extends Component {
     public function updatedTemporaryImages (){
         if($this->validate([
             'temporary_images.*' => 'image|max:1024',
-            'temporary_images' => 'max:6'
+            'temporary_images' => 'max:6|max:2048'
         ])){
             foreach($this->temporary_images as $image){
                 $this->images[] = $image;

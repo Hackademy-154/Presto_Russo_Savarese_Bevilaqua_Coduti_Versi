@@ -25,7 +25,7 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('home.page') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('announcements.index') }}">Annunci</a>
+                    <a class="nav-link active" href="{{ route('announcements.index') }}"> Articoli </a>
                 </li>
                 @auth
                 <li class="nav-item">

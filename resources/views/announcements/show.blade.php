@@ -5,40 +5,32 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 mb-3 ">
 
-
+                @if ($announcement->images->count()>0)
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
-                        @foreach ($announcement->image as $key => $image)
+                        @foreach ($announcement->images as $key => $image)
                         <div class="carousel-item @if($loop->first) active @endif">
                             <img class="d-block w-100" src="{{Storage::url($image->path)}}" alt="Immagine {{ $key + 1}} dell'articolo'{{ $announcement->title }}">
                         </div>
                         @endforeach
                     </div>
-                        {{-- <div class="carousel-item">
-                            <img class="d-block w-100" src="https://picsum.photos/200" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://picsum.photos/200" alt="First slide">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
+                    @if ($announcement->images->count()>1)
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                     @endif
                 </div>
                 @else
-                <img class="d-block w-100" src="https://picsum.photos/200" alt="First slide">
+                <img class="d-block w-100" src="https://picsum.photos/200" alt="Nessuna foto inserita">
                 @endif
             </div>
 
-            <div class="col-12 col-md-6 mb-3">
+                <div class="col-12 col-md-6 mb-3">
                 <h2>Titolo Annuncio : <br> {{ $announcement->title }}</h2>
                 <p>Descrizione : <br>{{ $announcement->description }}</p>
                 <p>Annuncio Creato Da:<br> {{ $announcement->user->name }}</p>

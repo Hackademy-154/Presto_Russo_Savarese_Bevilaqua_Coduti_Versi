@@ -17,11 +17,12 @@ Route::get( '/category/{category}', [ AnnouncementController::class, 'byCategory
 
 
 // Rotte per i revisori
-route::get( '/revisor/index', [ RevisorController::class, 'index' ] )->middleware( 'isRevisor' )->name( 'revisor.index' );
+Route::get( '/revisor/index', [ RevisorController::class, 'index' ] )->middleware( 'isRevisor' )->name( 'revisor.index' );
 // INSERISCE NEL PATH TRUE
-route::patch( 'revisor/accept/{announcement}', [ RevisorController::class, 'accept' ] )->name( 'revisor.accept' );
+Route::patch( 'revisor/accept/{announcement}', [ RevisorController::class, 'accept' ] )->name( 'revisor.accept' );
 // INSERISCE NEL PATH FALSE
-route::patch( 'revisor/reject/{announcement}', [ RevisorController::class, 'reject' ] )->name( 'revisor.reject' );
+Route::patch( 'revisor/reject/{announcement}', [ RevisorController::class, 'reject' ] )->name( 'revisor.reject' );
+Route::patch( 'revisor/reset/{announcement}', [ RevisorController::class, 'reset' ] )->name( 'revisor.reset' );
 //LISTE DI ANNUNCI ACCETTATI E RIFIUTATI
 Route::get('/revisor/review-accepted', [RevisorController::class, 'reviewAccepted'])->name('revisor.reviewAccepted');
 Route::get('/revisor/review-rejected', [RevisorController::class, 'reviewRejected'])->name('revisor.reviewRejected');
@@ -40,3 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
 //Rotta per la ricerca
 Route::get( '/search/announcements', [ PublicController::class, 'searchAnnouncements' ] )->name( 'search.announcements' );
+
+
+// Rotta per la lingua
+Route::post( '/language/{lang}', [ PublicController::class, 'setLanguage' ] )->name( 'set.locale' );
