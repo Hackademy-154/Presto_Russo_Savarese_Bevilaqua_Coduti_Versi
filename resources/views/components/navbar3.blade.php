@@ -24,8 +24,9 @@
             </div>
 
             <!-- Mobile Toggle (hamburger menu) -->
-            <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -87,14 +88,22 @@
                 {{-- ! Language --}}
                 <!-- Language Dropdown -->
                 <div class="mx-1 dropdown">
-                    <button class="btn btn-primary btn-outline-secondary dropdown-toggle" type="button"
-                        id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Lingua
+                    <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img class="img-fluid navbar-flag rounded"
+                            src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+                            alt="bandiera europea">
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                        <li><a class="dropdown-item" href="#">Italiano</a></li>
-                        <li><a class="dropdown-item" href="#">English</a></li>
-                        <li><a class="dropdown-item" href="#">Español</a></li>
+                        <li><a class="dropdown-item" href="#"><img class="img-fluid navbar-flag rounded"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAkFBMVEX///8AiknZIir98fJvt5HmfYHYHyfw+fTZJCsGjEzZJi4AikgAh0PYGCEAikb++/v3+/n1yMrT6t/hW2EAkVPa7eSd0rj42NncNz7vqKrp9e82om7hTlXwsrT86+x2vJlJpnfkaG2n072LxqncMDhWrIDA4dEZlVv419n53+Atn2ngSE/smZzphYnjaG1nuZFo3K5RAAAC5UlEQVR4nO3Y6XLaQBCF0ckQJmwDQixCSJgdzBbe/+0y2ElsYTupSqZ/dPLdB+iuOnVbUyVjqknS8bXYNz/FyOcvRiq1urONv45tTcp6/lj71aZkNN4Ou512FJG2sImzEeKc95tlfuh9JJKujwEkjsgtwj2JlcByOmfvqkxXRayK6DIJ8b6cPbzdks6HcUU0mQSVzSW7X7LbNiOL6DKxzi771fvZLWKDaDMJKIMKigiJMpOQQf9lQ7qVIFFnEs7n5zdlOhchUWcSUC7fX59kNYz+edVpYl1r9vxJGRUdERKFJtaXT9eTrLsyNdFoYv35VpTRUagmOk1OhzB+LFUTlSbW5+F0FlI1UWqyrJlU6NHRauI2meDp6DS5Hc9V7HS0mtRNIVYTpSauNHtM7kwmJs7v6H/IxLYweZOGkSPBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBBNMMMEEE0wwwQQTTDDBBJM/M2ligslv0zJ7TKpxE1O0MamalObawaQSXzfjrlhRlJrkJh1i8jpu82iShdjxqDTxy5oRPB6dJnkYPzpKFUWjiT8dwvhkLVUUlSbn3m1+WggVRaGJL7On+clK6OnRZ+Jas97zgulchESfibOXhx8b0i0mTyRfs5cVu4XE9agzGfRfrUh2i//exNlBv/d6R7LbNqNXRZWJs8sqSUg6H3Yiq2gy8ZtL9nbNdFV046roMfG+nD28tycZrY/tTjseixIT5/3pnN3fzYvKeDGMVpa2rEkUFBdANsv88JHIM0s6vhb7ZpSImjRaMTIp63lWuxv+DRuj8vSp1ersAAAAAElFTkSuQmCC"
+                                    alt=""></a></li>
+                        <li><a class="dropdown-item" href="#"><img class="img-fluid navbar-flag rounded"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
+                                    alt="bandiera inglese"></a></li>
+                        <li><a class="dropdown-item" href="#"><img class="img-fluid navbar-flag rounded"
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png"
+                                    alt=""></a></li>
                     </ul>
                 </div>
 

@@ -67,6 +67,10 @@ body {
     min-width: 50vw;
 }
 
+.navbar-flag{
+    max-width: 70px;
+}
+
 /* #endregion */
 
 /*! Navbar Searchbox */
