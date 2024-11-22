@@ -22,4 +22,9 @@ class PublicController extends Controller {
         return view( 'announcements.searched', compact( 'announcements', 'query' ) );
     }
 
+    public function setLanguage( $lang ) {
+        session()->put( 'locale', $lang );
+        return redirect()->back();
+    }
+
 }
