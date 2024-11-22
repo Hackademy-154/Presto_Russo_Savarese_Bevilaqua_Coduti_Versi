@@ -19,7 +19,7 @@
                             <form action="{{ route('revisor.reject', $announcement) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-danger">Rifiuta</button>
+                                <button type="submit" class="btn btn-warning">Reset Articolo</button>
                             </form>
                         </div>
                     </div>
