@@ -178,6 +178,12 @@ body {
 
 /* ! Input */
 /* #region  */
+.image-input1{
+    min-height: 50vh;
+    min-width: 75vw;
+}
+
+
 
 /* #endregion */
 

@@ -1,15 +1,22 @@
 <x-layout>
     {{-- Messaggi di errore e successo --}}
-    @if (session()->has('errorMessage'))
-        <div class="alert alert-danger text-center shadow rounded w-50">
-            {{ session('errorMessage') }}
+    <div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            @if (session()->has('errorMessage'))
+                <div class="alert alert-danger text-center shadow rounded">
+                    {{ session('errorMessage') }}
+                </div>
+            @endif
+            @if (session()->has('message'))
+                <div class="alert alert-success text-center shadow rounded">
+                    {{ session('message') }}
+                </div>
+            @endif
+
         </div>
-    @endif
-    @if (session()->has('message'))
-        <div class="alert alert-success text-center shadow rounded w-50">
-            {{ session('message') }}
-        </div>
-    @endif
+    </div>
+</div>
 
     {{-- <div class=" d-flex align-items-center border border-primary"> --}}
     <div class="container-fluid hero-section">

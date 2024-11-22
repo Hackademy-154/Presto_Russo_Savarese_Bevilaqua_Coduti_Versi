@@ -10,9 +10,27 @@
         </div>
     </div>
 
+
+
+
     <div class="row">
         <div class="col-12 p-3">
             <form wire:submit="save" class="formCustom">
+
+                {{-- ! Sezioni immagini da completare --}}
+
+                <div class="row m-3 p-0 justify-content-between border border-dashed border-secondary rounded">
+                    <div class="col-12 input-group p-0 m-0">
+                        <input type="title" class="form-control image-input1 p-0  @error('title') is-invalid @enderror "
+                            id="title" wire:model.live.blur="title">
+                        <button class="btn btn-success"> <i class="bi bi-folder-plus"></i> Carica le foto</button>
+
+                        @error('title')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="row m-3 p-3 pb-3 justify-content-between border border-secondary rounded">
                     <div class="col-3">
                         <label for="title" class="form-label w-50">
