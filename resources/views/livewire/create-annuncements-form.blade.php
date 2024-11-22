@@ -44,8 +44,8 @@
                                     <div class="col-md-3 d-flex flex-column align-items-center my-3">
                                         <div 
                                             class="img-preview mx-auto shadow rounded"
-                                            style="width: 150px; height: 150px; background-image: url('{{ $image->temporaryUrl() }}'); background-size: cover; background-position: center;"
-                                        ></div>
+                                            style="width: 150px; height: 150px; background-image: url('{{ $image->temporaryUrl() }}'); background-size: cover; background-position: center;"></div>
+                                            <button type="button" class="btn mt-1 btn-danger" wire:click="removeImage({{ $key }})">Rimuovi</button>
                                     </div>
                                 @endforeach
                             </div>

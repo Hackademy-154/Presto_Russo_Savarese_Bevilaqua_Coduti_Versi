@@ -91,4 +91,10 @@ class CreateAnnuncementsForm extends Component {
         }
 
     }
+
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
+    }
 }
