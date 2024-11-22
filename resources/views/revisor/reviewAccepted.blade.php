@@ -18,6 +18,7 @@
                             <p class="card-text">Prezzo: {{ $announcement->price }} €</p>
                             <form action="{{ route('revisor.reject', $announcement) }}" method="POST">
                                 @csrf
+                                @method('PATCH')
                                 <button type="submit" class="btn btn-danger">Rifiuta</button>
                             </form>
                         </div>
