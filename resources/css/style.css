@@ -71,6 +71,14 @@ body {
     max-width: 70px;
 }
 
+#languageDropdown:focus {
+    border: none;
+}
+
+.flag-dropdown{
+    --bs-dropdown-min-width: none;
+}
+
 /* #endregion */
 
 /*! Navbar Searchbox */
