@@ -1,6 +1,8 @@
 <?php
 
 return[
+    'announcementsWarning' => '¡En este momento no hay anuncios disponibles! Se subirán en el futuro',
+    'announcementsbyCat' => 'ANUNCIOS POR CATEGORÍA',
     'follow' => 'SÍGUENOS EN REDES SOCIALES',
     'termsofservice' => 'Términos de Servicio',
     'cash' => 'Efectivo',

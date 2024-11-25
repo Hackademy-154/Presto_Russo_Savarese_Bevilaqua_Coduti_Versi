@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-6 text-center mt-5">
-                <h1 class="display-2">ANNUNCI PER CATEGORIA <span class="fst-italic fw-bold">{{$category->name}}</span></h1>
+                <h1 class="display-2">{{__('ui.announcementsbyCat')}}<span class="fst-italic fw-bold"><br>{{__("ui.$category->name")}}</span></h1>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
                 @empty
 
                 <div class="col-12 text-center">
-                    <h2>Al Momento Non Sono Presenti Annunci Disponibili! Saranno Caricati in Futuro!</h2>
+                    <h2>{{__('ui.announcementsWarning')}}!</h2>
                 </div>
 
                 @endforelse

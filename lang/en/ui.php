@@ -3,6 +3,8 @@
 
 return
 [
+    'announcementsWarning' => 'At the moment there are no announcements available! They will be uploaded in the future',
+    'announcementsbyCat'=>'ANNOUNCEMENTS BY CATEGORY',
     'follow' => 'FOLLOW US ON SOCIAL MEDIA',
     'termsofservice' => 'Terms of Service',
     'cash' => 'Cash',

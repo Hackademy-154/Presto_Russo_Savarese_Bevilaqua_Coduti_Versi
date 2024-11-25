@@ -1,6 +1,8 @@
 <?php
 return
 [
+    'announcementsWarning'=> 'Al momento non ci sono annunci disponibili! Saranno caricati in futuro',
+    'announcementsbyCat' => 'ANNUNCI PER CATEGORIA',
     'follow' => 'SEGUICI SUI SOCIAL MEDIA',
     'termsofservice' => 'Termini di Servizio',
     'cash' => 'Contanti',
