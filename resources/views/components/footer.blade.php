@@ -2,10 +2,10 @@
     <div class="px-3 row justify-content-evenly">
         <!-- Aiuto & Contatti -->
         <div class="col-12 col-md-2 mb-2">
-            <h5 class="text-nowrap fw-bold text-start"><i class="bi bi-question-circle"></i> Aiuto & Contatti</h5>
+            <h5 class="text-nowrap fw-bold text-start"><i class="bi bi-question-circle"></i> {{__('ui.helpAndContact')}}</h5>
             <ul class="nav flex-column">
-                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Pagamenti</a></li>
-                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Contanti</a></li>
+                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">{{__('ui.payments')}}</a></li>
+                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">{{__('ui.cash')}}</a></li>
                 <!-- Policy -->
                 <br>
 
@@ -16,8 +16,7 @@
         <div class="col-12 col-md-2 mb-2">
             <h5 class="fw-bold"><i class="bi bi-info-circle"></i> Policy</h5>
             <ul class="nav flex-column">
-                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Termini di
-                        servizio</a></li>
+                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">{{__('ui.termsofservice')}}</a></li>
                 <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Cookies</a></li>
             </ul>
 
@@ -80,7 +79,7 @@
 
         <!-- Social -->
         <div class="col-12 col-md-2 mb-2">
-            <h5 class="text-start fw-bold">SEGUICI SUI SOCIAL</h5>
+            <h5 class="text-start fw-bold">{{__('ui.follow')}}</h5>
             <ul class="list-unstyled d-flex align-items-star">
                 <li class="mx-2"><a target="_blank" href="https://www.facebook.com"><i class="text-black bi bi-facebook"
                             style="font-size: 3.1rem;"></i></a></li>

@@ -1,6 +1,12 @@
 <?php
 return
 [
+    'follow' => 'SEGUICI SUI SOCIAL MEDIA',
+    'termsofservice' => 'Termini di Servizio',
+    'cash' => 'Contanti',
+    'payments' => 'Pagamenti',
+    'helpAndContact' => 'Aiuto & Contatti',
+    'search' => 'Cerca',
     'hello' => 'Ciao',
     'allAnnouncements' => 'Tutti gli Annunci',
     'sell' => 'Vendi',

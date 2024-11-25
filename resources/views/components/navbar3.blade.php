@@ -13,7 +13,7 @@
                     class="d-flex align-items-center w-100">
                     @csrf
                     <!-- Campo di ricerca -->
-                    <input placeholder="Cerca..." name="query" type="search" class="form-control me-2"
+                    <input placeholder="{{__('ui.search')}}" name="query" type="search" class="form-control me-2"
                         style="max-width: 300px;" />
 
                     <!-- Bottone con icona -->

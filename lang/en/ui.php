@@ -3,6 +3,12 @@
 
 return
 [
+    'follow' => 'FOLLOW US ON SOCIAL MEDIA',
+    'termsofservice' => 'Terms of Service',
+    'cash' => 'Cash',
+    'payments' => 'Payments',
+    'helpAndContact' => 'Help & Contacts',
+    'search' => 'Search',
     'hello' => 'Hello',
     'allAnnouncements' => 'All Announcements',
     'sell' => 'Sell',
