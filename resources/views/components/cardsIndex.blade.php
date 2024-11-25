@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-    <img src="{{$announcement->images->isNotEmpty() ? Storage::url($announcement->images->first()->path) :
+    <img src="{{$announcement->images->isNotEmpty() ? $announcement->images->first()->getUrl(500, 700) :
     'https://picsum.photos/200'}}" class="card-img-top" alt="Immagine dell'articolo {{ $announcement->title }}">
     <div class="card-body">
         <h5 class="card-title">{{ $announcement->title }}</h5>

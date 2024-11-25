@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
-use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File;
 
 class CreateAnnuncementsForm extends Component {
     // Questa aggiunta permette l'use delle immagini nel forLiveWire
@@ -55,7 +57,6 @@ class CreateAnnuncementsForm extends Component {
 
     public function save() {
         $this->validate();
-
         $this->announcement = Announcement::create( [
             'title' => $this->title,
             'description' => $this->description,
@@ -65,10 +66,11 @@ class CreateAnnuncementsForm extends Component {
         ] );
         if(count($this->images)>0){
             foreach($this->images as $image){
-                $this->announcement->images()->create( [
-                    'path' => $image->store( 'images', 'public' )
-                ] );
+                $newFileName = "announcements/{$this->announcement->id}";
+                $newImage =$this->announcement->images()->create( ['path' => $image->store($newFileName, 'public' )]);
+                dispatch(new ResizeImage($newImage->path, 500, 700));
             }
+            File::deleteDirectory(storage_path('app/livewire-tmp'));
             
         }
         session()->flash( 'success', 'Annunci Creati Con Successo!' );

@@ -44,7 +44,7 @@
                         {{-- Mostra le immagini dell'annuncio --}}
                         @foreach ($announcement_to_check->images as $key => $image)
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="{{ Storage::url($image->path) }}" 
+                                <img src="{{ $image->getUrl(500, 700) }}" 
                                      class="img-fluid rounded shadow" 
                                      alt="Immagine {{ $key + 1 }} dell'articolo '{{ $announcement_to_check->title }}'">
                             </div>
