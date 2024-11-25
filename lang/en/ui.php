@@ -3,6 +3,7 @@
 
 return
 [
+    'category' => 'Category',
     'annCat' => 'Announcement Category',
     'createdOn' => 'Announcement Created On',
     'annuncedBy' => 'Announcement Created By',

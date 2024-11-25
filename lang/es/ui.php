@@ -1,6 +1,7 @@
 <?php
 
 return[
+    'category' => 'Categoría',
     'annCat' => 'Categoría de Anuncio',
     'createdOn' => 'Anuncio Creado El',
     'annuncedBy' => 'Anuncio Creado Por',
