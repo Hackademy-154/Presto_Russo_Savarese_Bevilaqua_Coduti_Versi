@@ -1,104 +1,98 @@
 <x-layout>
-    <div class="container">
-        {{-- Mostra un messaggio di successo se presente nella session --}}
+    <div class="container py-5">
+        {{-- Messaggio di successo --}}
         @if (session()->has('message'))
-            <div class="row justify-content-center mt-3">
-                <div class="col-12 alert alert-success text-center shadow rounded">
-                    {{ session('message') }}
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="alert alert-success text-center shadow rounded-pill p-3">
+                        {{ session('message') }}
+                    </div>
                 </div>
             </div>
         @endif
 
-        <div class="container-fluid pt-5">
-            <div class="row mt-5 justify-content-center">
+        {{-- Titolo della dashboard --}}
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 col-md-8">
+                <div class="rounded shadow bg-light text-center p-4">
+                    <h1 class="display-4 fw-bold text-dark">Revisor Dashboard</h1>
+                </div>
+            </div>
+        </div>
+
+        {{-- Se ci sono annunci da revisionare --}}
+        @if ($announcement_to_check)
+            <div class="row mt-5 align-items-start">
+                {{-- Carosello immagini --}}
                 <div class="col-12 col-md-6">
-                    <div class="rounded shadow bg-body-secondary">
-                        <h1 class="display-5 text-center pt-2 pb-2">
-                            Revisor Dashboard
-                        </h1>
+                    <div id="fixedCarousel" class="carousel slide shadow" data-bs-ride="carousel" style="max-height: 500px; overflow: hidden;">
+                        <!-- Immagini del carosello -->
+                        <div class="carousel-inner">
+                            @foreach ($announcement_to_check->images as $key => $image)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img src="{{ Storage::url($image->path) }}" class="d-block mx-auto carousel-image rounded" alt="Immagine {{ $key + 1 }}">
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <!-- Controlli -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#fixedCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#fixedCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                {{-- Dettagli annuncio --}}
+                <div class="col-12 col-md-6">
+                    <div class="p-4 bg-light shadow rounded">
+                        <h2 class="fw-bold">{{ $announcement_to_check->title }}</h2>
+                        <p class="text-muted">{{ $announcement_to_check->description }}</p>
+                        <p class="h5 text-success">Prezzo: €{{ $announcement_to_check->price }}</p>
+                        <div class="d-flex justify-content-between mt-4">
+                            {{-- Pulsanti --}}
+                            <form action="{{ route('revisor.reject', ['announcement' => $announcement_to_check]) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-outline-danger w-100 me-2 rounded-pill">Rifiuta Annuncio</button>
+                            </form>
+                            <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-outline-success w-100 ms-2 rounded-pill">Accetta Annuncio</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="container mt-4">
-                <div class="row">
-                    <div class="col-6 d-flex justify-content-center">
-                        <form action="{{ route('revisor.reviewAccepted') }}" method="GET">
-                            @csrf
-                            <button type="submit" class="btn btn-custom">Rivedi Annunci Accettati</button>
-                        </form>
-                    </div>
-                    <div class="col-6 d-flex justify-content-center">
-                        <form action="{{ route('revisor.reviewRejected') }}" method="GET">
-                            @csrf
-                            <button type="submit" class="btn btn-custom">Rivedi Annunci Rifiutati</button>
-                        </form>
-                    </div>
+        @else
+            {{-- Nessun annuncio --}}
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h2 class="text-muted fw-bold">Non ci sono annunci da revisionare al momento.</h2>
+                    <a href="{{ route('home.page') }}" class="btn btn-primary rounded-pill mt-4 shadow">Torna alla Home</a>
                 </div>
             </div>
+        @endif
 
-            {{-- Controllo sugli annunci da revisionare --}}
-            @if ($announcement_to_check)
-                <div class="row mt-5">
-                    @if ($announcement_to_check->images->count())
-                        {{-- Mostra le immagini dell'annuncio --}}
-                        @foreach ($announcement_to_check->images as $key => $image)
-                            <div class="col-6 col-md-4 mb-4">
-                                <img src="{{ $image->getUrl(500, 700) }}"
-                                     class="img-fluid rounded shadow"
-                                     alt="Immagine {{ $key + 1 }} dell'articolo '{{ $announcement_to_check->title }}'">
-                            </div>
-                        @endforeach
-                    @else
-                        {{-- Mostra immagini segnaposto --}}
-                        @for ($i = 0; $i < 6; $i++)
-                            <div class="col-6 col-md-4 text-center">
-                                <img src="https://picsum.photos/300"
-                                     class="img-fluid rounded shadow"
-                                     alt="Immagine segnaposto">
-                            </div>
-                        @endfor
-                    @endif
-                </div>
-
-                {{-- Informazioni sull'annuncio --}}
-                <div class="row justify-content-center pt-5 align-items-center">
-                    <div class="col-12">
-                        <h1 class="fst-italic display-4">
-                            {{ $announcement_to_check->title }}
-                        </h1>
-                        <h3>Autore: {{ $announcement_to_check->user->name }}</h3>
-                        <h4>Prezzo: {{ $announcement_to_check->price }}</h4>
-                        <p class="h6">{{ $announcement_to_check->description }}</p>
-                    </div>
-                </div>
-
-                {{-- Azioni per accettare o rifiutare l'annuncio --}}
-                <div class="row mt-4">
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn btn-custom">Accetta Annuncio</button>
-                        </form>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <form action="{{ route('revisor.reject', ['announcement' => $announcement_to_check]) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn btn-custom">Rifiuta Annuncio</button>
-                        </form>
-                    </div>
-                </div>
-            @else
-                {{-- Nessun annuncio da revisionare --}}
-                <div class="row justify-content-center pt-5">
-                    <div class="col-12 text-center">
-                        <h1 class="fst-italic display-4">Nessun articolo da revisionare</h1>
-                        <a href="{{ route('home.page') }}" class="btn btn-custom">Torna alla Home</a>
-                    </div>
-                </div>
-            @endif
+        {{-- Pulsanti per vedere annunci accettati e rifiutati --}}
+        <div class="row justify-content-center mt-5">
+            <div class="col-6 col-md-3 text-center">
+                <form action="{{ route('revisor.reviewAccepted') }}" method="GET">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-success w-100 py-2 rounded-pill shadow">Annunci Accettati</button>
+                </form>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <form action="{{ route('revisor.reviewRejected') }}" method="GET">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger w-100 py-2 rounded-pill shadow">Annunci Rifiutati</button>
+                </form>
+            </div>
         </div>
     </div>
 </x-layout>

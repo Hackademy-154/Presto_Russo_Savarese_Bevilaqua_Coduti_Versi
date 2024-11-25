@@ -36,13 +36,13 @@
                 <!-- Sezione icone -->
                 <div class="row justify-content-center g-2 m-0 p-0">
                     <div class="col-4 text-center">
-                        <a href="#" class="nav-link p-0">
+                        <a target="_blank" href="https://www.dhl.com/us-en/home.html" class="nav-link p-0">
                             <img class="img-fluid footer-icon-size" src="{{ asset('icons/DHL_Group_06.2023.svg.jpg') }}" alt="dhl">
                         </a>
                     </div>
                     <div class="col-4 text-center">
-                        <a href="#" class="nav-link p-0">
-                            <img class="img-fluid footer-icon-size" src="{{ asset('icons/Web-Ready-Small-DPD-icon.jpg') }}" alt="dpd">
+                        <a target="_blank" href="https://www.brt.it" class="nav-link p-0">
+                            <img class="img-fluid footer-icon-size" src="{{ asset('icons/Web-Ready-Small-DPD-icon.jpg') }}" alt="Bartolini">
                         </a>
                     </div>
                 </div>
@@ -51,12 +51,12 @@
 
 
                     <div class="col-4 text-center">
-                        <a href="#" class="nav-link p-0">
+                        <a target="_blank" href="https://www.fedex.com/it-it/home.html" class="nav-link p-0">
                             <img class="img-fluid footer-icon-size" src="{{ asset('icons/fedex-logo-free-download-free-vector-1.jpg') }}" alt="fedex">
                         </a>
                     </div>
                     <div class="col-4 text-center">
-                        <a href="#" class="nav-link p-0">
+                        <a target="_blank" href="https://gls-group.com/IT/it/home/" class="nav-link p-0">
                             <img class="img-fluid footer-icon-size" src="{{ asset('icons/Logo-GLS-1080x1080px.svg.png') }}" alt="gls">
                         </a>
                     </div>
@@ -82,11 +82,11 @@
         <div class="col-12 col-md-2 mb-2">
             <h5 class="text-start fw-bold">SEGUICI SUI SOCIAL</h5>
             <ul class="list-unstyled d-flex align-items-star">
-                <li class="mx-2"><a href="https://www.facebook.com"><i class="text-black bi bi-facebook"
+                <li class="mx-2"><a target="_blank" href="https://www.facebook.com"><i class="text-black bi bi-facebook"
                             style="font-size: 3.1rem;"></i></a></li>
-                <li class="mx-2"><a href="https://x.com"><i class="text-black bi bi-twitter-x"
+                <li class="mx-2"><a target="_blank" href="https://x.com"><i class="text-black bi bi-twitter-x"
                             style="font-size: 3.1rem;"></i></a></li>
-                <li class="mx-2"><a href="https://www.instagram.com"><i class="text-black bi bi-instagram"
+                <li class="mx-2"><a target="_blank" href="https://www.instagram.com"><i class="text-black bi bi-instagram"
                             style="font-size: 3.1rem;"></i></a></li>
             </ul>
         </div>

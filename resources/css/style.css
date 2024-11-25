@@ -330,7 +330,7 @@ body {
 .hero-section-with-overlay {
     position: relative;
     height: 50vh; /* Altezza della sezione */
-    overflow:auto;
+    overflow: auto;
 }
 
 .hero-section-with-overlay img {
@@ -482,6 +482,65 @@ body {
 
 .btn-primary:hover {
     background-color: #136d60;
+}
+/* #endregion */
+
+/*! revisor index  */
+/* #region  */
+carousel-image {
+    max-width: 100%; /* Adatta l'immagine alla larghezza del contenitore */
+    max-height: 500px; /* Altezza massima del carosello */
+    object-fit: contain; /* Bande nere per immagini in verticale o proporzioni diverse */
+    background-color: black; /* Sfondo per le bande nere */
+}
+
+.carousel-inner {
+    background-color: black; /* Sfondo del carosello */
+    height: 500px; /* Altezza fissa del carosello */
+    display: flex;
+    align-items: center; /* Centra verticalmente le immagini */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    ); /* Sfondo semi-trasparente per i controlli */
+    border-radius: 50%; /* Controlli arrotondati */
+    width: 40px;
+    height: 40px;
+}
+
+/* Pulsanti annunci accettati/rifiutati */
+.btn-outline-success {
+    background-color: transparent;
+    border: 2px solid #198754; /* Verde */
+    color: #198754; /* Colore testo */
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #198754; /* Verde pieno al passaggio */
+    color: white;
+}
+
+.btn-outline-danger {
+    background-color: transparent;
+    border: 2px solid #dc3545; /* Rosso */
+    color: #dc3545; /* Colore testo */
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545; /* Rosso pieno al passaggio */
+    color: white;
 }
 /* #endregion */
 
