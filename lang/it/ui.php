@@ -1,6 +1,12 @@
 <?php
 return
 [
+    'annCat' => 'Categoria Annuncio',
+    'createdOn' => 'Annuncio Creato Il',
+    'annuncedBy' => 'Annuncio Creato Da',
+    'descr' => 'Descrizione',
+    'titleAnn' => 'Titolo Annuncio',
+    'announcementDet' => 'Dettaglio Annuncio',
     'titleAccepted' => 'Annunci Accettati',
     'titleRejected' => 'Annunci Rifiutati',
     'backToDashboard' => 'Torna alla Dashboard Generale',

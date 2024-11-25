@@ -3,6 +3,12 @@
 
 return
 [
+    'annCat' => 'Announcement Category',
+    'createdOn' => 'Announcement Created On',
+    'annuncedBy' => 'Announcement Created By',
+    'descr' => 'Description',
+    'titleAnn' => 'Announcement Title',
+   'announcementDet' => 'Announcement Details',
     'titleAccepted' => 'Accepted Announcements',
     'titleRejected' => 'Rejected Announcements',
     'backToDashboard'=>'Back to General Dashboard',

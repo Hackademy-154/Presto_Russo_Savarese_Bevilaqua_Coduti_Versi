@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container mt-3">
-        <h1 class="text-center mt-3 mb-3">Dettaglio Annuncio</h1>
+        <h1 class="text-center mt-3 mb-3">{{__('ui.announcementDet')}}</h1>
         <div class="row">
             <!-- Carosello immagini -->
             <div class="col-12 col-md-6 mb-3">
@@ -40,12 +40,12 @@
             <!-- Dettagli annuncio -->
             <div class="col-12 col-md-6 mb-3">
 
-                <h2>Titolo Annuncio : <br> {{ $announcement->title }}</h2>
-                <p>Descrizione : <br>{{ $announcement->description }}</p>
-                <p>Annuncio Creato Da:<br> {{ $announcement->user->name }}</p>
-                <p>Annuncio Creato il:<br> {{ $announcement->created_at }}</p>
-                <p>Categoria Annuncio:<br> {{ $announcement->category->name }}</p>
-                <p> Prezzo :<br> {{ $announcement->price }} €</p>
+                <h2>{{__('ui.titleAnn')}} : <br> {{ $announcement->title }}</h2>
+                <p>{{__('ui.descr')}} : <br>{{ $announcement->description }}</p>
+                <p>{{__('ui.annuncedBy')}} :<br> {{ $announcement->user->name }}</p>
+                <p>{{__('ui.createdOn')}} :<br> {{ $announcement->created_at }}</p>
+                <p>{{__('ui.annCat')}} :<br> {{ $announcement->category->name }}</p>
+                <p> {{__('ui.price')}} :<br> {{ $announcement->price }} €</p>
                 <!-- Aggiungi qui gli altri dettagli come descrizione, prezzo, ecc. -->
                 {{-- <div class="mt-4">
                     @auth
