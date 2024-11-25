@@ -19,6 +19,7 @@ return
 'revisor'=> 'Revisor',
 'login'=>'Login',
 'logout'=>'Logout',
+'register' => 'Register',
 'SelectCategory'=>'Select a Category',
 'startselling'=>'Start Selling',
 'buyNow'=>'Buy Now',

@@ -17,6 +17,7 @@ return[
     'revisor' => 'Revisor',
     'login' => 'Iniciar sesión',
     'logout' => 'Cerrar sesión',
+    'register' => 'Registrarse',
     'SelectCategory' => 'Selecciona una Categoría',
     'startselling' => 'Comienza a Vender',
     'buyNow' => 'Comprar Ahora',
