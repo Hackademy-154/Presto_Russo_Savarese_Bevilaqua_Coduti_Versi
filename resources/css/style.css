@@ -186,6 +186,16 @@ body {
     transform: scale(1.05); /* Effetto hover */
 }
 
+.btn-success,
+.btn-danger,
+.btn-warning {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
 /* #endregion */
 
 /* ! Input */
@@ -263,65 +273,84 @@ body {
 
 /* ! Hero section */
 /* #region  */
-
-/* .landingbox1 {
-    min-width: 31%;
-} */
-
+/* ! Hero section */
+/* Hero Section */
 .hero-section {
-    background-color: var(--button-color); /* Verde scuro */
+    background-color: #136d60; /* Colore di sfondo */
     color: white;
-    /* padding: 50px 0; */
-    /* display: flex;
-    align-items: center; */
-    min-height: 50%; /* Altezza minima per uniformità */
+    min-height: 60vh;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #004d3b 50%, #007a71 100%);
 }
 
 .hero-text-box {
-    background-color: var(--main-bg-color); /* Sfondo verde chiaro */
+    background-color: #00695c;
+    border-radius: 10px;
     padding: 20px;
-    color: #d8ff7c; /* Colore delle scritte */
-    min-height: 100%;
-    max-width: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.hero-section h1 {
-    font-size: 2.3rem;
-    font-weight: bold;
-    line-height: 1.3;
-    margin-bottom: 20px;
+.hero-text-box h1,
+.hero-text-box h2 {
+    color: #d8ff7c; /* Colore del testo */
+    margin-bottom: 10px;
 }
 
-.hero-section .text-highlight {
-    color: #d8ff7c; /* Giallo chiaro */
-    font-weight: bold;
-}
-
-.hero-section .btn-hero {
-    background-color: #d8ff7c; /* Giallo del pulsante */
-    color: var(--button-color); /* Verde scuro */
-    border: none;
-    padding: 12px 25px;
+.hero-text-box .btn-hero {
+    background-color: #d8ff7c;
+    color: #004d40;
+    padding: 12px 24px;
+    border-radius: 30px;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 30px; /* Bottone più arrotondato */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    max-width: 80%; /* Riduce la larghezza per bilanciare */
 }
 
-.hero-section .btn-hero:hover {
-    background-color: #0f8e78; /* Tonalità leggermente più scura */
-    transform: scale(1.05); /* Effetto hover di ingrandimento */
+.hero-text-box .btn-hero:hover {
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio */
+    background-color: #00b36b; /* Colore leggermente più scuro */
 }
 
-/* Immagine nella Hero Section */
-.hero-section img {
-    /* border-radius: 20px;  */
-    /* Arrotonda i bordi dell'immagine */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aggiunge un'ombra elegante */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto di transizione */
-    min-height: 100%;
-    max-width: 100%;
+.hero-image {
+    border-radius: 15px; /* Arrotonda i bordi */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombra elegante */
+    max-width: 90%; /* Riduce leggermente la larghezza */
+    max-height: 400px; /* Altezza massima */
+    height: auto; /* Mantiene le proporzioni */
+    margin: 0 auto; /* Centra l'immagine */
+    display: block; /* Assicura che sia un elemento di blocco */
+    filter: brightness(95%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombra più evidente */
+}
+
+.hero-section .col-md-6:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Spaziatura uniforme */
+}
+
+/* Per assicurare che le colonne siano attaccate */
+.row {
+    gap: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .hero-text-box {
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+        max-height: 300px;
+    }
 }
 /* #endregion */
 
@@ -483,6 +512,33 @@ body {
 .btn-primary:hover {
     background-color: #136d60;
 }
+
+.img-fixer1 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-styler1 {
+    /* max-height: 500px; */
+
+    object-fit:cover;
+}
+
+
+/* Classe per gestire immagini responsive nel carosello */
+.img-custom {
+
+    object-fit: cover;   /* Ritaglia l'immagine mantenendo il rapporto d'aspetto */
+    object-position: center;
+    padding: 10%;
+}
+
+.carousel-inner {
+    max-height: 500px; /* Limita l'altezza massima del carosello */
+    overflow: hidden;  /* Nasconde eventuali immagini fuoriuscite */
+}
+
 /* #endregion */
 
 /*! revisor index  */

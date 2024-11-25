@@ -1,39 +1,37 @@
 <x-layout>
     {{-- Messaggi di errore e successo --}}
     <div class="container mt-3">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            @if (session()->has('errorMessage'))
-                <div class="alert alert-danger text-center shadow rounded">
-                    {{ session('errorMessage') }}
-                </div>
-            @endif
-            @if (session()->has('message'))
-                <div class="alert alert-success text-center shadow rounded">
-                    {{ session('message') }}
-                </div>
-            @endif
+        <div class="row justify-content-center">
+            <div class="col-12">
+                @if (session()->has('errorMessage'))
+                    <div class="alert alert-danger text-center shadow rounded">
+                        {{ session('errorMessage') }}
+                    </div>
+                @endif
+                @if (session()->has('message'))
+                    <div class="alert alert-success text-center shadow rounded">
+                        {{ session('message') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
 
+   {{-- Hero Section --}}
+   <div class="container-fluid hero-section d-flex align-items-center">
+    <div class="row justify-content-between w-100 align-items-center">
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center text-light ">
+            <div class="hero-text-box p-4 ms-auto">
+                <h1 class="fw-bold">{{__('ui.frase0pz1')}} <span class="fw-bolder">{{__('ui.frase0pz2')}}</span>,<br> {{__('ui.frase0pz3')}} {{__('ui.frase0pz4')}}.</h1>
+                <h2 class="mt-2">{{__('ui.frase0pz5')}} <span class="fw-bolder">presto.it</span> {{__('ui.frase0pz6')}}!</h2>
+                <a href="#" class="btn btn-hero mt-4">{{__('ui.startselling')}}</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <img src="{{ asset('images/shophero.jpg') }}" alt="Landing" class="img-fluid hero-image">
         </div>
     </div>
 </div>
-
-    {{-- <div class=" d-flex align-items-center border border-primary"> --}}
-    <div class="container-fluid hero-section">
-        <div class="row justify-content-center p-0 m-0 g-0 align-items-center">
-            <div class="col text-start text-light landingbox1 m-0 p-0 justify-content-center align-items-center ms-auto">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 hero-text-box p-4 ms-auto h-100 justify-content-center">
-                    <h1>{{__('ui.frase0pz1')}} <span class="fw-bolder">{{__('ui.frase0pz2')}}</span>,{{__('ui.frase0pz3')}}<br> {{__('ui.frase0pz4')}}.</h1>
-                    <h1>{{__('ui.frase0pz5')}} <span class="fw-bolder">presto.it</span> {{__('ui.frase0pz6')}} !</h1>
-                        <a href="#" class="btn btn-hero mt-3">{{__('ui.startselling')}}</a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 m-0 p-0 h-100 me-auto">
-                <img src="{{ asset('images/landing.jpeg') }}" alt="Landing" class="h-100">
-            </div>
-        </div>
-    </div>
-    {{-- </div> --}}
 
 
     <!-- Prima Sezione -->

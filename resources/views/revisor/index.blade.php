@@ -25,12 +25,13 @@
             <div class="row mt-5 align-items-start">
                 {{-- Carosello immagini --}}
                 <div class="col-12 col-md-6">
-                    <div id="fixedCarousel" class="carousel slide shadow" data-bs-ride="carousel" style="max-height: 500px; overflow: hidden;">
-                        <!-- Immagini del carosello -->
+                    <div id="fixedCarousel" class="carousel slide shadow" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($announcement_to_check->images as $key => $image)
                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <img src="{{ Storage::url($image->path) }}" class="d-block mx-auto carousel-image rounded" alt="Immagine {{ $key + 1 }}">
+                                    <img src="{{ Storage::url($image->path) }}"
+                                        class="d-block w-100 img-custom"
+                                        alt="Immagine {{ $key + 1 }} dell'annuncio '{{ $announcement_to_check->title }}'">
                                 </div>
                             @endforeach
                         </div>
