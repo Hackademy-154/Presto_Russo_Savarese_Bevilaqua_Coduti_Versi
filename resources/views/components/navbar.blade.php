@@ -6,21 +6,21 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
        <div class=" search-box navbar-width1">
             <form role="search" action="{{ route('search.announcements') }}" method="GET">
                 @csrf
-                    <input placeholder="Cerca..."name="query" type="search" class="form-control position-relative" />
+                    <input placeholder="Cerca..."name="query" type="search" class="form-control position-relatiw" />
                     <button type="submit" class="input-group-text btn btn-link position-absolute h-100 mx-auto p-3"><i class="bi bi-search"></i></button>
             </form>
 
         </div>
             {{-- bi bi-search --}}
-        
-        
+
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-                
+
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('home.page') }}">Home</a>
                 </li>
@@ -31,14 +31,14 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('work.with.us') }}">Lavora con Noi</a>
                 </li>
-                
+
                 @endauth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Categorie
                 </a>
-                
+
                 <div class="dropdown-menu dropdown-menu1 dropdown-menu-end p-3" aria-labelledby="navbarDropdown">
                     <div class="row justify-content-between mx-auto">
                         @foreach ($categories as $index => $category)
@@ -51,8 +51,8 @@
                         @endif
                         @endforeach
                     </div>
-                    
-                    
+
+
                     <li class="nav-item dropdown  ">
                         <a class="nav-link dropdown-toggle position-relative" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -67,15 +67,15 @@
                         Ciao Visitatore
                         @endauth
                     </a>
-                    
-                    
+
+
                     <ul class="dropdown-menu dropdown-menu-end">
                         @auth
                         <li>
                             <form action="{{ route('logout') }}" method="POST" id="form-logout">
                                 @csrf
                                 <button class="dropdown-item" type="submit"> Logout</button>
-                                
+
                             </form>
                         </li>
                         <li>
@@ -107,5 +107,5 @@
             </ul>
         </div>
     </div>
-    
+
 </nav>

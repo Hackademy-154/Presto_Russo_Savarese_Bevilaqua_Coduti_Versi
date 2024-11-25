@@ -20,15 +20,15 @@
 
     {{-- <div class=" d-flex align-items-center border border-primary"> --}}
     <div class="container-fluid hero-section">
-        <div class="row justify-content-center p-0 m-0">
-            <div class="col-12 col-md-3 text-start text-light h-100 landingbox1 m-0 p-0">
-                <div class="col-12 hero-text-box p-4">
+        <div class="row justify-content-center p-0 m-0 g-0 align-items-center">
+            <div class="col text-start text-light landingbox1 m-0 p-0 justify-content-center align-items-center ms-auto">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 hero-text-box p-4 ms-auto h-100 justify-content-center">
                     <h1>{{__('ui.frase0pz1')}} <span class="fw-bolder">{{__('ui.frase0pz2')}}</span>,{{__('ui.frase0pz3')}}<br> {{__('ui.frase0pz4')}}.</h1>
                     <h1>{{__('ui.frase0pz5')}} <span class="fw-bolder">presto.it</span> {{__('ui.frase0pz6')}} !</h1>
                         <a href="#" class="btn btn-hero mt-3">{{__('ui.startselling')}}</a>
                 </div>
             </div>
-            <div class="d-flex col-12 col-md-6 w-50 m-0 p-0 center-sd">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 m-0 p-0 h-100 me-auto">
                 <img src="{{ asset('images/landing.jpeg') }}" alt="Landing" class="h-100">
             </div>
         </div>

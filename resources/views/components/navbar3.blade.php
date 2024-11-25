@@ -85,7 +85,7 @@
                     <i class="bi bi-box-arrow-up"></i> {{__('ui.sell')}}
                 </a>
 
-             
+
                 <!-- Language Dropdown -->
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
@@ -110,8 +110,8 @@
 <!-- Sezione Categorie -->
 <div class="categories-bar border-top border-bottom py-2">
     <div class="container-fluid">
-        <!-- Lista orizzontale visibile su dispositivi medi e grandi -->
-        <ul class="categories-list d-flex justify-content-center m-0 p-0 d-none d-md-flex">
+        <!-- Lista orizzontale visibile solo su dispositivi grandi -->
+        <ul class="categories-list d-none d-lg-flex justify-content-center m-0 p-0">
             <li class="category-item me-3 list-unstyled">
                 <a href="{{ route('announcements.index') }}" class="category-link text-decoration-none">
                     {{__('ui.allAnnouncements')}}
@@ -127,8 +127,8 @@
             @endforeach
         </ul>
 
-        <!-- Dropdown per dispositivi piccoli -->
-        <div class="d-block d-md-none">
+        <!-- Dropdown visibile solo su dispositivi medi e piccoli -->
+        <div class="d-lg-none">
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle w-100" type="button" id="categoriesDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -137,10 +137,8 @@
                 <ul class="dropdown-menu p-2" aria-labelledby="categoriesDropdown" style="min-width: 100%;">
                     <div class="row">
                         <div class="col-6 mb-2">
-
                             <li>
-                                <a class="dropdown-item text-center" href="{{ route('announcements.index') }}"
-                                    class="category-link text-decoration-none">
+                                <a class="dropdown-item text-center" href="{{ route('announcements.index') }}">
                                     {{__('ui.allAnnouncements')}}
                                 </a>
                             </li>

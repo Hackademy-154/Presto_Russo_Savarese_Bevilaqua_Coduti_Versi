@@ -25,9 +25,46 @@
 
         <!-- Partners -->
         <div class="col-12 col-md-2 mb-2">
-            <h5 class="fw-bold"><i class="bi bi-truck"></i> Partners</h5>
-            <ul class="nav flex-wrap align-items-start">
-                <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img
+            <div class="container m-0 p-0">
+                <!-- Titolo -->
+                <div class="row m-0 p-0">
+                    <div class="col-12 text-center">
+                        <h5 class="fw-bold"><i class="bi bi-truck"></i> Partners</h5>
+                    </div>
+                </div>
+
+                <!-- Sezione icone -->
+                <div class="row justify-content-center g-2 m-0 p-0">
+                    <div class="col-4 text-center">
+                        <a href="#" class="nav-link p-0">
+                            <img class="img-fluid footer-icon-size" src="{{ asset('icons/DHL_Group_06.2023.svg.jpg') }}" alt="dhl">
+                        </a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a href="#" class="nav-link p-0">
+                            <img class="img-fluid footer-icon-size" src="{{ asset('icons/Web-Ready-Small-DPD-icon.jpg') }}" alt="dpd">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center g-2 m-0 p-0">
+
+
+                    <div class="col-4 text-center">
+                        <a href="#" class="nav-link p-0">
+                            <img class="img-fluid footer-icon-size" src="{{ asset('icons/fedex-logo-free-download-free-vector-1.jpg') }}" alt="fedex">
+                        </a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a href="#" class="nav-link p-0">
+                            <img class="img-fluid footer-icon-size" src="{{ asset('icons/Logo-GLS-1080x1080px.svg.png') }}" alt="gls">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img
                             class="img-fluid footer-icon-size" src="{{ asset('icons/DHL_Group_06.2023.svg.jpg') }}"
                             alt="dhl"></a></li>
                 <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img
@@ -39,10 +76,7 @@
                 </li>
                 <li class="nav-item mx-1 my-1"><a href="#" class="nav-link p-0"><img
                             class="img-fluid footer-icon-size" src="{{ asset('icons/Logo-GLS-1080x1080px.svg.png') }}"
-                            alt="gls"></a></li>
-            </ul>
-        </div>
-
+                            alt="gls"></a></li> --}}
 
         <!-- Social -->
         <div class="col-12 col-md-2 mb-2">
@@ -59,11 +93,16 @@
 
     </div>
 
+
+
+
+
+
     {{-- ! Top footer end, bottom footer start --}}
 
     <!-- Flags e Copyright -->
     {{-- <div class="d-flex flex-wrap align-items-center py-2 border-top"> --}}
-        {{-- <div class="d-flex flex-wrap justify-content-center">
+    {{-- <div class="d-flex flex-wrap justify-content-center">
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
                     src="{{ asset('icons/icons8-islanda-circolare-96.png') }}" alt="Islanda"></a>
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
@@ -81,6 +120,6 @@
             <a class="mx-2" href="#"><img class="img-fluid flag-size"
                     src="{{ asset('icons/icons8-circolare-italia-48.png') }}" alt="Italia"></a>
         </div> --}}
-        <p class="mx-3 text-center fw-bold justify-item-center">© 2024 Presto.it</p>
+    <p class="mx-3 text-center fw-bold justify-item-center">© 2024 Presto.it</p>
     {{-- </div> --}}
 </footer>

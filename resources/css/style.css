@@ -264,9 +264,9 @@ body {
 /* ! Hero section */
 /* #region  */
 
-.landingbox1 {
+/* .landingbox1 {
     min-width: 31%;
-}
+} */
 
 .hero-section {
     background-color: var(--button-color); /* Verde scuro */
@@ -274,13 +274,15 @@ body {
     /* padding: 50px 0; */
     /* display: flex;
     align-items: center; */
-    min-height: 50vh; /* Altezza minima per uniformità */
+    min-height: 50%; /* Altezza minima per uniformità */
 }
 
 .hero-text-box {
     background-color: var(--main-bg-color); /* Sfondo verde chiaro */
     padding: 20px;
     color: #d8ff7c; /* Colore delle scritte */
+    min-height: 100%;
+    max-width: 50%;
 }
 
 .hero-section h1 {
@@ -318,6 +320,8 @@ body {
     /* Arrotonda i bordi dell'immagine */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aggiunge un'ombra elegante */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto di transizione */
+    min-height: 100%;
+    max-width: 100%;
 }
 /* #endregion */
 
@@ -459,8 +463,8 @@ footer {
 }
 
 .footer-icon-size {
-    min-width: 10vh;
-    max-width: 10vh;
+    min-width: 8vh;
+    max-width: 8vh;
     border-radius: 10px;
 }
 
@@ -487,19 +491,8 @@ footer {
         max-width: 100%;
     }
 
-    .center-sd {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* min-height: 50vh; */
-    }
 
-    .center-sd img {
-        display: block;
-        margin: 0 auto; /* Per assicurare il centraggio orizzontale */
-        max-width: 93vw; /* Per evitare overflow */
-        min-height: 20vh; /* Mantiene le proporzioni */
-    }
+
 
     footer .row {
         text-align: center; /* Centra il testo */
@@ -517,6 +510,10 @@ footer {
         background-size: cover;
         height: 120px;
         width: 120px;
+    }
+
+    .hero-text-box{
+        min-width: 100%;
     }
 }
 /* #endregion */

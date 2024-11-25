@@ -29,7 +29,7 @@ return
     // frasi con span
     'frase0pz1' => 'Trova ciò che',
     'frase0pz2' => 'desideri',
-    'frase0pz3' => 'Vendi ciò che',
+    'frase0pz3' => ' Vendi ciò che',
     'frase0pz4' => 'non usi',
     'frase0pz5' => 'Con',
     'frase0pz6' => 'è semplice e veloce',

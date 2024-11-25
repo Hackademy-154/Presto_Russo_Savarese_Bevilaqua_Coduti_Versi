@@ -1,6 +1,6 @@
 <div class="container border border-dark rounded">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-3">
         <div class="col-4 justify-content-center">
             @if (session('success'))
                 <div class="alert alert-success">
@@ -17,9 +17,9 @@
                 {{-- Sezioni immagini --}}
                 <div class="row m-3 p-0 justify-content-between border border-dashed border-secondary rounded">
                     <div class="col-12 input-group p-0 m-0">
-                        <input 
-                            type="file" 
-                            wire:model="temporary_images" 
+                        <input
+                            type="file"
+                            wire:model="temporary_images"
                             multiple
                             class="form-control image-input1 p-0 @error('temporary_images') is-invalid @enderror"
                             placeholder="img/"
@@ -42,7 +42,7 @@
                             <div class="row border border-secondary rounded shadow py-4">
                                 @foreach ($images as $key => $image)
                                     <div class="col-md-3 d-flex flex-column align-items-center my-3">
-                                        <div 
+                                        <div
                                             class="img-preview mx-auto shadow rounded"
                                             style="width: 150px; height: 150px; background-image: url('{{ $image->temporaryUrl() }}'); background-size: cover; background-position: center;"></div>
                                             <button type="button" class="btn mt-1 btn-danger" wire:click="removeImage({{ $key }})">Rimuovi</button>
@@ -61,10 +61,10 @@
                         </label>
                     </div>
                     <div class="col-6">
-                        <input 
-                            placeholder="Inserisci il titolo del prodotto" 
+                        <input
+                            placeholder="Inserisci il titolo del prodotto"
                             type="text"
-                            class="form-control @error('title') is-invalid @enderror" 
+                            class="form-control @error('title') is-invalid @enderror"
                             id="title"
                             wire:model.lazy="title"
                         >
@@ -82,10 +82,10 @@
                         </label>
                     </div>
                     <div class="col-6">
-                        <textarea 
-                            rows="5" 
+                        <textarea
+                            rows="5"
                             class="form-control @error('description') is-invalid @enderror"
-                            id="description" 
+                            id="description"
                             wire:model.lazy="description"
                             placeholder="Inserisci la descrizione del prodotto"
                         ></textarea>
@@ -103,8 +103,8 @@
                         </label>
                     </div>
                     <div class="col-6">
-                        <select 
-                            class="form-control @error('selectedCategory') is-invalid @enderror" 
+                        <select
+                            class="form-control @error('selectedCategory') is-invalid @enderror"
                             id="categories"
                             wire:model.lazy="selectedCategory"
                         >
@@ -127,11 +127,11 @@
                         </label>
                     </div>
                     <div class="col-6">
-                        <input 
-                            type="number" 
+                        <input
+                            type="number"
                             class="form-control @error('price') is-invalid @enderror"
-                            id="price" 
-                            wire:model.lazy="price" 
+                            id="price"
+                            wire:model.lazy="price"
                             placeholder="0.00€"
                         >
                         @error('price')

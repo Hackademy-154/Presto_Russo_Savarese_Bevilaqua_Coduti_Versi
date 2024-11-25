@@ -2,7 +2,7 @@
     <div class="container">
         {{-- Mostra un messaggio di successo se presente nella session --}}
         @if (session()->has('message'))
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-3">
                 <div class="col-12 alert alert-success text-center shadow rounded">
                     {{ session('message') }}
                 </div>
@@ -44,8 +44,8 @@
                         {{-- Mostra le immagini dell'annuncio --}}
                         @foreach ($announcement_to_check->images as $key => $image)
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="{{ $image->getUrl(500, 700) }}" 
-                                     class="img-fluid rounded shadow" 
+                                <img src="{{ $image->getUrl(500, 700) }}"
+                                     class="img-fluid rounded shadow"
                                      alt="Immagine {{ $key + 1 }} dell'articolo '{{ $announcement_to_check->title }}'">
                             </div>
                         @endforeach
@@ -53,8 +53,8 @@
                         {{-- Mostra immagini segnaposto --}}
                         @for ($i = 0; $i < 6; $i++)
                             <div class="col-6 col-md-4 text-center">
-                                <img src="https://picsum.photos/300" 
-                                     class="img-fluid rounded shadow" 
+                                <img src="https://picsum.photos/300"
+                                     class="img-fluid rounded shadow"
                                      alt="Immagine segnaposto">
                             </div>
                         @endfor
