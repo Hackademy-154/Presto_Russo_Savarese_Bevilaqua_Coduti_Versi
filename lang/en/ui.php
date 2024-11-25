@@ -20,6 +20,7 @@ return
 'login'=>'Login',
 'logout'=>'Logout',
 'register' => 'Register',
+'beginRevisor'=>'Become a Revisor',
 'SelectCategory'=>'Select a Category',
 'startselling'=>'Start Selling',
 'buyNow'=>'Buy Now',

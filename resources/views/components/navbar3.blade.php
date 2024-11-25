@@ -64,7 +64,7 @@
                             @else
                                 <li class="nav-item revisorButton">
                                     <a class="pl-4 dropdown-item" href="{{ route('work.with.us') }}">
-                                        {{__('ui.beginrevisor')}}
+                                        {{__('ui.beginRevisor')}}
                                     </a>
                                 </li>
                             @endif

@@ -18,6 +18,7 @@ return
     'login' => 'Accedi',
     'logout' => 'Esci',
     'register' => 'Registrati',
+    'beginRevisor'=>'Diventa Revisore',
     'SelectCategory' => 'Seleziona una Categoria',
     'startselling' => 'Inizia a Vendere',
     'buyNow' => 'Compra Ora',
