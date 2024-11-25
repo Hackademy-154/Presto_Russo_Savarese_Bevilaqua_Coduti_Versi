@@ -325,6 +325,43 @@ body {
 }
 /* #endregion */
 
+/*! Revisor hero section */
+/* #region  */
+.hero-section-with-overlay {
+    position: relative;
+    height: 50vh; /* Altezza della sezione */
+    overflow:auto;
+}
+
+.hero-section-with-overlay img {
+    object-fit: cover; /* Copre l'intera area */
+    width: 100%;
+    height: 100%;
+}
+
+.hero-overlay-specific {
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay scuro */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-text {
+    z-index: 2;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase; /* Testo tutto maiuscolo */
+}
+
+.hero-text h1 {
+    font-size: 3rem; /* Dimensione del testo */
+    font-weight: bold;
+    line-height: 1.2; /* Spaziatura tra le righe */
+}
+/* #endregion */
+
 /*! Register e login  */
 /* #region  */
 
@@ -351,7 +388,6 @@ body {
 
 .form-column,
 .image-column {
-
     padding: 20px 40px;
 }
 .form-group {
@@ -491,9 +527,6 @@ footer {
         max-width: 100%;
     }
 
-
-
-
     footer .row {
         text-align: center; /* Centra il testo */
     }
@@ -504,7 +537,7 @@ footer {
         align-items: center; /* Centra gli elementi */
     }
 
-    .img-preview{
+    .img-preview {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -512,7 +545,7 @@ footer {
         width: 120px;
     }
 
-    .hero-text-box{
+    .hero-text-box {
         min-width: 100%;
     }
 }
