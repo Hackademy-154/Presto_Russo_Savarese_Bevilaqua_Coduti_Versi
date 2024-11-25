@@ -16,7 +16,7 @@
                             <h5 class="card-title">{{ $announcement->title }}</h5>
                             <p class="card-text">{{ $announcement->description }}</p>
                             <p class="card-text">Prezzo: {{ $announcement->price }} €</p>
-                            <form action="{{ route('revisor.accept', $announcement) }}" method="POST">
+                            <form action="{{ route('revisor.reset', $announcement) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-warning">Reset Articolo</button>

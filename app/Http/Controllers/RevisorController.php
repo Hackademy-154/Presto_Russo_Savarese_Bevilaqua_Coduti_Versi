@@ -35,6 +35,15 @@ class RevisorController extends Controller
             ->back()
             ->with('message', "Hai rifiutato questo annuncio $announcement->title");
     }
+  
+    public function reset(Announcement $announcement)
+    {
+        $announcement->is_accepted = null;
+        $announcement->save();
+        return redirect()
+            ->back()
+            ->with('message', "Hai resettato lo stato di questo annuncio $announcement->title");
+    }
 
     public function reviewAccepted()
     {
@@ -63,9 +72,6 @@ if(Auth::check()){
 }
     }
     
-
-
-
     public function makeRevisor(User $user)
     {
         Artisan::call('app:make-user-revisor', [
