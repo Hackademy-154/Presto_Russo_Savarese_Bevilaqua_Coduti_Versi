@@ -1,9 +1,9 @@
 <x-layout>
-    <h1>Annunci Accettati</h1>
+    <h1 class="text-center">{{__('ui.titleAccepted')}}</h1>
     <div class="container mt-4 mb-4">
         <div class="row justify-content-center">
-            <div class="col-4">
-                <a class="btn btn-custom " href="{{ route('revisor.index') }}">Torna Dashbord Generale</a>
+            <div class="col-4 text-center">
+                <a class="btn btn-custom " href="{{ route('revisor.index') }}">{{__('ui.backToDashboard')}}</a>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
                             <form action="{{ route('revisor.reset', $announcement) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-warning">Reset Articolo</button>
+                                <button type="submit" class="btn btn-warning">{{__('ui.resetAnnouncements')}}</button>
                             </form>
                         </div>
                     </div>

@@ -1,6 +1,17 @@
 <?php
 return
 [
+    'titleAccepted' => 'Annunci Accettati',
+    'titleRejected' => 'Annunci Rifiutati',
+    'backToDashboard' => 'Torna alla Dashboard Generale',
+    'resetAnnouncements' => 'Resetta Annunci',
+    'announcementsRejected' => 'Annunci Rifiutati',
+    'announcementsAccepted' => 'Annunci Accettati',
+    'backHome' => 'Torna alla Home',
+    'emptyRevisionAnnouncements' => 'Al momento non ci sono annunci da revisionare',
+    'accept' => 'Accetta Annuncio',
+    'reject' => 'Rifiuta Annuncio',
+    'price' => 'Prezzo',
     'announcementsWarning'=> 'Al momento non ci sono annunci disponibili! Saranno caricati in futuro',
     'announcementsbyCat' => 'ANNUNCI PER CATEGORIA',
     'follow' => 'SEGUICI SUI SOCIAL MEDIA',

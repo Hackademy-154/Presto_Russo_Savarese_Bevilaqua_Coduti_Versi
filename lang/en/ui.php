@@ -3,6 +3,17 @@
 
 return
 [
+    'titleAccepted' => 'Accepted Announcements',
+    'titleRejected' => 'Rejected Announcements',
+    'backToDashboard'=>'Back to General Dashboard',
+    'resetAnnouncements' => 'Reset Announcements',
+    'announcementsRejected' => 'Rejected Announcements',
+    'announcementsAccepted' => 'Accepted Announcements',
+    'backHome' => 'Back to Home',
+    'emptyRevisionAnnouncements' => 'There are no announcements to review at the moment',
+    'accept' => 'Accept Announcement',
+    'reject' => 'Reject Announcement',
+    'price' => 'Price',
     'announcementsWarning' => 'At the moment there are no announcements available! They will be uploaded in the future',
     'announcementsbyCat'=>'ANNOUNCEMENTS BY CATEGORY',
     'follow' => 'FOLLOW US ON SOCIAL MEDIA',

@@ -52,18 +52,18 @@
                     <div class="p-4 bg-light shadow rounded">
                         <h2 class="fw-bold">{{ $announcement_to_check->title }}</h2>
                         <p class="text-muted">{{ $announcement_to_check->description }}</p>
-                        <p class="h5 text-success">Prezzo: €{{ $announcement_to_check->price }}</p>
+                        <p class="h5 text-success">{{__('ui.price')}}: €{{ $announcement_to_check->price }}</p>
                         <div class="d-flex justify-content-between mt-4">
                             {{-- Pulsanti --}}
                             <form action="{{ route('revisor.reject', ['announcement' => $announcement_to_check]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-outline-danger w-100 me-2 rounded-pill">Rifiuta Annuncio</button>
+                                <button type="submit" class="btn btn-outline-danger w-100 me-2 rounded-pill">{{__('ui.reject')}}</button>
                             </form>
                             <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-outline-success w-100 ms-2 rounded-pill">Accetta Annuncio</button>
+                                <button type="submit" class="btn btn-outline-success w-100 ms-2 rounded-pill">{{__('ui.accept')}}</button>
                             </form>
                         </div>
                     </div>
@@ -73,8 +73,8 @@
             {{-- Nessun annuncio --}}
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <h2 class="text-muted fw-bold">Non ci sono annunci da revisionare al momento.</h2>
-                    <a href="{{ route('home.page') }}" class="btn btn-primary rounded-pill mt-4 shadow">Torna alla Home</a>
+                    <h2 class="text-muted fw-bold">{{__('ui.emptyRevisionAnnouncements')}}.</h2>
+                    <a href="{{ route('home.page') }}" class="btn btn-primary rounded-pill mt-4 shadow">{{__('ui.backHome')}}</a>
                 </div>
             </div>
         @endif
@@ -84,13 +84,13 @@
             <div class="col-6 col-md-3 text-center">
                 <form action="{{ route('revisor.reviewAccepted') }}" method="GET">
                     @csrf
-                    <button type="submit" class="btn btn-outline-success w-100 py-2 rounded-pill shadow">Annunci Accettati</button>
+                    <button type="submit" class="btn btn-outline-success w-100 py-2 rounded-pill shadow">{{__('ui.announcementsAccepted')}}</button>
                 </form>
             </div>
             <div class="col-6 col-md-3 text-center">
                 <form action="{{ route('revisor.reviewRejected') }}" method="GET">
                     @csrf
-                    <button type="submit" class="btn btn-outline-danger w-100 py-2 rounded-pill shadow">Annunci Rifiutati</button>
+                    <button type="submit" class="btn btn-outline-danger w-100 py-2 rounded-pill shadow">{{__('ui.announcementsRejected')}}</button>
                 </form>
             </div>
         </div>
