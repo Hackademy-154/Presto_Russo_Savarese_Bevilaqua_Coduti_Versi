@@ -24,7 +24,7 @@
             <div class="hero-text-box p-4 ms-auto">
                 <h1 class="fw-bold">{{__('ui.frase0pz1')}} <span class="fw-bolder">{{__('ui.frase0pz2')}}</span>,<br> {{__('ui.frase0pz3')}} {{__('ui.frase0pz4')}}.</h1>
                 <h2 class="mt-2">{{__('ui.frase0pz5')}} <span class="fw-bolder">presto.it</span> {{__('ui.frase0pz6')}}!</h2>
-                <a href="#" class="btn btn-hero mt-4">{{__('ui.startselling')}}</a>
+                <a href="{{ route('announcements.create') }}" class="btn btn-hero mt-4">{{__('ui.startselling')}}</a>
             </div>
         </div>
         <div class="col-12 col-md-6">
