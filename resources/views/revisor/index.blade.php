@@ -35,6 +35,26 @@
                                 </div>
                             @endforeach
                         </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Rating</h5>
+                                ><div class="row justify-content-center">
+                                    <div class="col-2 ">
+                                        <div class="text-center mx-auto {{$image->adult}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-10">adult</div>
+                                </div>
+                                ><div class="row justify-content-center">
+                                    <div class="col-2">
+                                        <div class="text-center mx-auto {{$image->violence}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-10"></div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <!-- Controlli -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#fixedCarousel" data-bs-slide="prev">

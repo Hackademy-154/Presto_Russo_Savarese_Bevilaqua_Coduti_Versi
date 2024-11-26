@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
@@ -69,6 +70,7 @@ class CreateAnnuncementsForm extends Component {
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage =$this->announcement->images()->create( ['path' => $image->store($newFileName, 'public' )]);
                 dispatch(new ResizeImage($newImage->path, 500, 700));
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
             }
             File::deleteDirectory(storage_path('app/livewire-tmp'));
             
