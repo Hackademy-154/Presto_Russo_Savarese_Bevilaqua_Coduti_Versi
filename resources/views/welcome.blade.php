@@ -47,7 +47,7 @@
                     {{__('ui.frase1pz3')}}?</h3>
                 <p class="category-description">{{__('ui.frase1pz4')}}!
                 </p>
-                <a href="#" class="btn btn-custom">{{__('ui.buyNow')}}</a>
+                <a href="{{ route('byCategory', ['category' => 9]) }}" class="btn btn-custom">{{__('ui.buyNow')}}</a>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
             <div class="col-12 col-md-6 order-md-1">
                 <h3 class="category-title">{{__('ui.frase2pz1')}}<span class="highlight"> {{__('ui.frase2pz2')}}!</span></h3>
                 <p class="category-description"> {{__('ui.frase3')}}.</p>
-                <a href="#" class="btn btn-custom">{{__('ui.buyNow')}}</a>
+                <a href="{{ route('byCategory', ['category' => 2]) }}" class="btn btn-custom">{{__('ui.buyNow')}}</a>
             </div>
         </div>
     </div>

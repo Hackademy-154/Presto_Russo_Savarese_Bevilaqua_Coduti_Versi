@@ -9,9 +9,7 @@
                     <div class="carousel-inner">
                         @foreach ($announcement->images as $key => $image)
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{ Storage::url($image->path) }}"
-                                    class="d-block w-100 img-custom"
-                                    alt="Immagine {{ $key + 1 }} dell'annuncio '{{ $announcement->title }}'">
+                                <img src="{{ $announcement->images->isNotEmpty() ? $announcement->images->first()->getUrl(500, 700) : 'https://picsum.photos/200'}}" class="card-img-top" alt="{{ $announcement->title }}">
                             </div>
                         @endforeach
                     </div>
