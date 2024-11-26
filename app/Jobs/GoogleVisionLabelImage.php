@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Jobs;
+
+use App\Models\Image;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+
+class GoogleVisionLabelImage implements ShouldQueue {
+    use Queueable;
+
+    /**
+    * Create a new job instance.
+    */
+    private $announcement_image_id;
+
+    public function __construct( $announcement_image_id ) {
+        $this->announcement_image_id = $announcement_image_id;
+    }
+
+    /**
+    * Execute the job.
+    */
+
+    public function handle(): void {
+        $i = Image::find( $this->announcement_image_id );
+
+        if ( ! $i ) {
+            return;
+        }
+        $image = file_get_contents( storage_path( '/app/' . $i->path ) );
+        putenv( 'GOOGLE_APPLICATION_CREDENTIALS=' . base_path( 'google_credentials.json' ) );
+        $imageAnnotator = new ImageAnnotatorClient();
+        $response = $imageAnnotator->labelDetection( $image );
+        $labels = $response->getLabelAnnotations();
+
+        if ( $labels ) {
+            $result = [];
+            foreach ( $labels as $label ) {
+                $result[] = $label->getDescription();
+            }
+            $i->labels = $result;
+            $i->save();
+        }
+        $imageAnnotator->close();
+    }
+}
