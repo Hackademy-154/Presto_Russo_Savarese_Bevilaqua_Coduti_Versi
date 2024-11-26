@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\RemoveFaces;
 use Livewire\Component;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
@@ -64,11 +65,16 @@ class CreateAnnuncementsForm extends Component {
             'category_id' =>$this->selectedCategory ,
             'user_id' => Auth::id()
         ] );
+        
         if(count($this->images)>0){
             foreach($this->images as $image){
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage =$this->announcement->images()->create( ['path' => $image->store($newFileName, 'public' )]);
-                dispatch(new ResizeImage($newImage->path, 500, 700));
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 300, 300),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id)
+                ])->dispatch($newImage->id);
             }
             File::deleteDirectory(storage_path('app/livewire-tmp'));
             
@@ -76,6 +82,7 @@ class CreateAnnuncementsForm extends Component {
         session()->flash( 'success', 'Annunci Creati Con Successo!' );
         $this->reset();
 
+        
     }
 
     public function render() {
