@@ -75,7 +75,7 @@
                 <div class="col-12 col-md-6 col-lg-4 announcement-card">
                     <a href="{{ route('announcements.show', $announcement->id) }}" class="card-link" style="text-decoration: none; color: inherit;">
                         <div class="card">
-                            <img src="{{ $announcement->images->isNotEmpty() ? $announcement->images->first()->getUrl(500, 1000) : 'https://picsum.photos/200'}}" class="card-img-top" alt="{{ $announcement->title }}">
+                            <img src="{{ $announcement->images->isNotEmpty() ? $announcement->images->first()->getUrl(500, 700) : 'https://picsum.photos/200'}}" class="card-img-top" alt="{{ $announcement->title }}">
 
                             <div class="card-body">
                                 <h5 class="card-title">{{ $announcement->title }}</h5>
