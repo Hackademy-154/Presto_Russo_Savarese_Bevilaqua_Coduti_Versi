@@ -42,7 +42,7 @@ class ResizeImage implements ShouldQueue
         Image::load($srcPath)
             ->crop($w, $h, CropPosition::Center)
             ->watermark(
-                base_path('public/watermark.png'),
+                base_path('public/images/Watermark.png'),
                 width: 50,
                 height: 50,
                 paddingX:5,
@@ -52,3 +52,4 @@ class ResizeImage implements ShouldQueue
             ->save($destPath);
     }
 }
+
