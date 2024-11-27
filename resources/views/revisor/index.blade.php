@@ -2,15 +2,15 @@
     <div class="container py-5">
         {{-- Messaggio di successo --}}
         @if (session()->has('message'))
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="alert alert-success text-center shadow rounded-pill p-3">
-                        {{ session('message') }}
-                    </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="alert alert-success text-center shadow rounded-pill p-3">
+                    {{ session('message') }}
                 </div>
             </div>
+        </div>
         @endif
-
+        
         {{-- Titolo della dashboard --}}
         <div class="row justify-content-center mb-5">
             <div class="col-12 col-md-8">
@@ -19,8 +19,8 @@
                 </div>
             </div>
         </div>
-
-        {{-- INIZIO GOOGLE AI --}}
+        
+        {{-- Se ci sono annunci da revisionare --}}
         @if ($announcement_to_check)
             <div class="row">
                 @foreach ($announcement_to_check->images as $key => $image)
@@ -59,9 +59,13 @@
                                             <div class="rounded-circle {{ $image->$category }}">
                                             </div>
                                         </div>
-                                        <div class="col-10 text-capitalize">
-                                            {{ $category }}
+                                        <div class="col-10">Spoof</div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-2">
+                                            <div class="text-center mx-auto {{ $image->racy }}"></div>
                                         </div>
+                                        <div class="col-10">Racy</div>
                                     </div>
                                 @endforeach
                             </div>
@@ -137,7 +141,7 @@
                 </div>
             </div>
         @endif
-
+        
         {{-- Pulsanti per vedere annunci accettati e rifiutati --}}
         <div class="row justify-content-center mt-5">
             <div class="col-6 col-md-3 text-center">
