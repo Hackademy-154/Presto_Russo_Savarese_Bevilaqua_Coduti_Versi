@@ -82,7 +82,7 @@ class CreateAnnuncementsForm extends Component
                 //dispatch(new GoogleVisionLabelImage($newImage->id));
                 //! nuovo codice 
                 RemoveFaces::withChain([
-                    new ResizeImage($newImage->path, 500, 700),
+                    new ResizeImage($newImage->path, 700, 1000),
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id)
                 ])->dispatch($newImage->id);

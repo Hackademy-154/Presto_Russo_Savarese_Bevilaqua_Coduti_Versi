@@ -543,13 +543,12 @@ body {
 
 /*! revisor index  */
 /* #region  */
-carousel-image {
-    max-width: 100%; /* Adatta l'immagine alla larghezza del contenitore */
-    max-height: 500px; /* Altezza massima del carosello */
-    object-fit: contain; /* Bande nere per immagini in verticale o proporzioni diverse */
-    background-color: black; /* Sfondo per le bande nere */
+.carousel-item img {
+    object-fit: cover;
+    height: 400px;
+    width: 100%;
+    border-radius: 0.5rem; /* Per gli angoli arrotondati */
 }
-
 .carousel-inner {
     background-color: black; /* Sfondo del carosello */
     height: 500px; /* Altezza fissa del carosello */

@@ -9,7 +9,7 @@
                     <div class="carousel-inner">
                         @foreach ($announcement->images as $key => $image)
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{$image->getUrl(500, 700)}}" class="card-img-top" alt="{{ $announcement->title }}">
+                                <img src="{{$image->getUrl(700, 1000)}}" class="card-img-top" alt="{{ $announcement->title }}">
 
                             </div>
                         @endforeach

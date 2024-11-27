@@ -27,7 +27,7 @@
                     <div class="col-md-6">
                         {{-- Immagine --}}
                         <div class="card mb-4 shadow">
-                            <img src="{{ $image->getUrl(500, 700) }}" 
+                            <img src="{{ $image->getUrl(700, 1000) }}" 
                                  class="card-img-top img-fluid" 
                                  alt="Immagine {{ $key + 1 }}">
                             <div class="card-body">
@@ -81,7 +81,7 @@
                         <div class="carousel-inner">
                             @foreach ($announcement_to_check->images as $key => $image)
                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <img src="{{ $image->getUrl(500, 700) }}"
+                                    <img src="{{ $image->getUrl(700, 1000) }}"
                                          class="d-block w-100 img-custom"
                                          alt="Immagine {{ $key + 1 }} dell'annuncio '{{ $announcement_to_check->title }}'">
                                 </div>
