@@ -27,15 +27,14 @@
                     <div class="col-md-6">
                         {{-- Immagine --}}
                         <div class="card mb-4 shadow">
-                            <img src="{{ $image->getUrl(700, 1000) }}" 
-                                 class="card-img-top img-fluid" 
-                                 alt="Immagine {{ $key + 1 }}">
+                            <img src="{{ $image->getUrl(700, 1000) }}" class="card-img-top img-fluid"
+                                alt="Immagine {{ $key + 1 }}">
                             <div class="card-body">
                                 {{-- Labels --}}
                                 <h5>Labels</h5>
-                                @if($image->labels && count($image->labels) > 0)
+                                @if ($image->labels && count($image->labels) > 0)
                                     <p>
-                                        @foreach($image->labels as $label)
+                                        @foreach ($image->labels as $label)
                                             <span class="badge bg-primary">#{{ $label }}</span>
                                         @endforeach
                                     </p>
@@ -57,7 +56,8 @@
                                 @foreach ($categories as $category)
                                     <div class="row align-items-center mb-2">
                                         <div class="col-2">
-                                            <div class="rounded-circle {{ $image->$category }}" style="width: 20px; height: 20px; background-color: {{ $image->$category ? 'red' : 'green' }};"></div>
+                                            <div class="rounded-circle {{ $image->$category }}">
+                                            </div>
                                         </div>
                                         <div class="col-10 text-capitalize">
                                             {{ $category }}
@@ -81,19 +81,20 @@
                         <div class="carousel-inner">
                             @foreach ($announcement_to_check->images as $key => $image)
                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <img src="{{ $image->getUrl(700, 1000) }}"
-                                         class="d-block w-100 img-custom"
-                                         alt="Immagine {{ $key + 1 }} dell'annuncio '{{ $announcement_to_check->title }}'">
+                                    <img src="{{ $image->getUrl(700, 1000) }}" class="d-block w-100 img-custom"
+                                        alt="Immagine {{ $key + 1 }} dell'annuncio '{{ $announcement_to_check->title }}'">
                                 </div>
                             @endforeach
                         </div>
 
                         {{-- Controlli --}}
-                        <button class="carousel-control-prev" type="button" data-bs-target="#fixedCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#fixedCarousel"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#fixedCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#fixedCarousel"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -108,15 +109,19 @@
                         <p class="h5 text-success">{{ __('ui.price') }}: €{{ $announcement_to_check->price }}</p>
                         <div class="d-flex justify-content-between mt-4">
                             {{-- Pulsanti --}}
-                            <form action="{{ route('revisor.reject', ['announcement' => $announcement_to_check]) }}" method="POST">
+                            <form action="{{ route('revisor.reject', ['announcement' => $announcement_to_check]) }}"
+                                method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-outline-danger w-100 me-2 rounded-pill">{{ __('ui.reject') }}</button>
+                                <button type="submit"
+                                    class="btn btn-outline-danger w-100 me-2 rounded-pill">{{ __('ui.reject') }}</button>
                             </form>
-                            <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}" method="POST">
+                            <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}"
+                                method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-outline-success w-100 ms-2 rounded-pill">{{ __('ui.accept') }}</button>
+                                <button type="submit"
+                                    class="btn btn-outline-success w-100 ms-2 rounded-pill">{{ __('ui.accept') }}</button>
                             </form>
                         </div>
                     </div>
@@ -127,7 +132,8 @@
             <div class="row mt-5">
                 <div class="col-12 text-center">
                     <h2 class="text-muted fw-bold">{{ __('ui.emptyRevisionAnnouncements') }}.</h2>
-                    <a href="{{ route('home.page') }}" class="btn btn-primary rounded-pill mt-4 shadow">{{ __('ui.backHome') }}</a>
+                    <a href="{{ route('home.page') }}"
+                        class="btn btn-primary rounded-pill mt-4 shadow">{{ __('ui.backHome') }}</a>
                 </div>
             </div>
         @endif
@@ -137,13 +143,15 @@
             <div class="col-6 col-md-3 text-center">
                 <form action="{{ route('revisor.reviewAccepted') }}" method="GET">
                     @csrf
-                    <button type="submit" class="btn btn-outline-success w-100 py-2 rounded-pill shadow">{{ __('ui.announcementsAccepted') }}</button>
+                    <button type="submit"
+                        class="btn btn-outline-success w-100 py-2 rounded-pill shadow">{{ __('ui.announcementsAccepted') }}</button>
                 </form>
             </div>
             <div class="col-6 col-md-3 text-center">
                 <form action="{{ route('revisor.reviewRejected') }}" method="GET">
                     @csrf
-                    <button type="submit" class="btn btn-outline-danger w-100 py-2 rounded-pill shadow">{{ __('ui.announcementsRejected') }}</button>
+                    <button type="submit"
+                        class="btn btn-outline-danger w-100 py-2 rounded-pill shadow">{{ __('ui.announcementsRejected') }}</button>
                 </form>
             </div>
         </div>
