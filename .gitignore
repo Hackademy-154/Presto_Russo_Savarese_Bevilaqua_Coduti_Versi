@@ -15,6 +15,7 @@
 google_credential.json 
 Homestead.json
 Homestead.yaml
+google_credential.json
 auth.json
 npm-debug.log
 yarn-error.log

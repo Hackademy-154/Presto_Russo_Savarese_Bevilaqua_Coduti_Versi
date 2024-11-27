@@ -1,32 +1,50 @@
 <x-layout>
-    <h1 class="text-center">{{__('ui.titleRejected')}}</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <a class="btn btn-custom " href="{{ route('revisor.index') }}">{{__('ui.backToDashboard')}}</a>
+    <!-- Titolo della Pagina -->
+    <div class="container text-center mt-5">
+        <h1 class="display-4 fw-bold">{{ __('ui.titleRejected') }}</h1>
+    </div>
+
+    <!-- Pulsante per tornare alla dashboard -->
+    <div class="container mt-4 mb-4">
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-4 text-center">
+                <a class="btn btn-primary btn-lg shadow-sm px-4" href="{{ route('revisor.index') }}">
+                    <i class="bi bi-arrow-left-circle me-2"></i> {{ __('ui.backToDashboard') }}
+                </a>
             </div>
         </div>
     </div>
+    
+    <!-- Lista degli Annunci Rifiutati -->
     <div class="container">
-        <div class="row">
+        <div class="row g-4">
             @foreach ($rejectedAnnouncements as $announcement)
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 rounded">
+                        <!-- Contenuto della Card -->
                         <div class="card-body">
-                            <h5 class="card-title">{{ $announcement->title }}</h5>
-                            <p class="card-text">{{ $announcement->description }}</p>
-                            <p class="card-text">{{__('ui.price')}}: {{ $announcement->price }} €</p>
-                            <form action="{{ route('revisor.reset', $announcement) }}" method="POST">
+                            <h5 class="card-title text-truncate fw-bold">{{ $announcement->title }}</h5>
+                            <p class="card-text text-muted small">{{ $announcement->description }}</p>
+                            <p class="card-text fw-bold ">{{ __('ui.price') }}: {{ $announcement->price }} €</p>
+                        </div>
+
+                        <!-- Pulsante Reset -->
+                        <div class="card-footer text-center bg-white border-0">
+                            <form action="{{ route('revisor.reset', $announcement) }}" method="POST" class="mt-3">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-warning">{{__('ui.resetAnnouncements')}}</button>
+                                <button type="submit" class="btn btn-warning btn-sm w-100 rounded-pill">
+                                    <i class="bi bi-arrow-clockwise"></i> {{ __('ui.resetAnnouncements') }}
+                                </button>
                             </form>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        <div class="d-flex justify-content-center">
+
+        <!-- Paginazione -->
+        <div class="d-flex justify-content-center mt-4">
             {{ $rejectedAnnouncements->links() }}
         </div>
     </div>
