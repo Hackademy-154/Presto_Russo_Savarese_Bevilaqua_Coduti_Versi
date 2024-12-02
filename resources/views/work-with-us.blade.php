@@ -53,21 +53,7 @@
                     <li><i class="bi bi-check-circle text-success"></i> Collaborazione con un team di esperti</li>
                 </ul>
                 <div class="mt-4">
-                    <form>
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" placeholder="Nome e Cognome">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="email" class="form-control" placeholder="Indirizzo email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <textarea class="form-control" placeholder="Motivazione" rows="3"></textarea>
-                        </div>
-                        <form action="{{ route('become.revisor') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn btn-custom mt-3">Invia</button>
-                        </form>
-                    </form>
+                    <a  class="btn btn-custom mt-3" href="{{ route('become.revisor') }}">DIVENTA REVISOR</a> 
                 </div>
             </div>
         </div>
