@@ -130,7 +130,7 @@
                                 <div class="card-body bg-white p-2 rounded mt-2 d-flex justify-content-center flex-column">
                                     <h5 class="noto-bold">Labels</h5>
                                     <div class="d-flex flex-wrap justify-content-center">
-                                        @if ($image->labels)
+                                        @if (!empty($image->labels) && is_array($image->labels))
                                         @foreach ($image->labels as $label)
                                         <span class="badge bg-primary m-1">#{{ $label }}</span>
                                         @endforeach

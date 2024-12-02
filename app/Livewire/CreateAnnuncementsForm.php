@@ -40,7 +40,7 @@ class CreateAnnuncementsForm extends Component
             'description' => 'required|min:10',
             'price' => 'required|numeric',
             'selectedCategory' => 'required',
-            'temporary_images.*' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'temporary_images.*' => 'image|mimes:jpg,png,jpeg,gif,svg,webp,heic,raw|max:2048',
             'temporary_images' => 'max:6|max:2048'
         ];
     }
@@ -54,6 +54,7 @@ class CreateAnnuncementsForm extends Component
             'price.required' => 'Seleziona almeno una :attribute ',
             'selectedCategory.required' => 'Seleziona almeno una categoria',
             'temporary_images.max' => 'Non puoi caricare più di 6 immagini',
+            'temporary_images.*.mimes' => 'Formato non supportato, formato immagine non supportato',
             'temporary_images.*.image' => 'Non puoi caricare file non immagini',
 
             // 'title.required' => 'A title is required',
