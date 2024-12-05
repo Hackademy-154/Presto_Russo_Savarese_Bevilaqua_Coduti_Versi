@@ -5,17 +5,17 @@ body {
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
-    background-color: #f7f7f7; /* Sfondo neutro */
+    background-color: #f7f7f7;
 }
 
 :root {
-    --main-bg-color: #13c1ac; /* Verde chiaro */
-    --main-bg-color-var: #b8ece6; /* Verde chiaro */
+    --main-bg-color: #13c1ac;
+    --main-bg-color-var: #b8ece6;
 
-    --button-color: #136d60; /* Verde scuro */
+    --button-color: #136d60;
     --navbar-hover-color: #72d1c2;
 
-    --color-text: #1c1c1c; /* Testo */
+    --color-text: #1c1c1c;
 }
 
 /* #endregion */
@@ -26,18 +26,18 @@ body {
 .category-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--button-color); /* Verde scuro */
+    color: var(--button-color);
 }
 
 .category-title .highlight {
-    color: var(--main-bg-color); /* Verde chiaro */
+    color: var(--main-bg-color);
     font-weight: bold;
 }
 
 /* Descrizioni */
 .category-description {
     font-size: 1rem;
-    color: #666; /* Grigio scuro */
+    color: #666;
     margin-bottom: 20px;
 }
 /* #endregion */
@@ -85,16 +85,16 @@ body {
 /* #region  */
 .navbar .search-box {
     position: relative;
-    width: 50%; /* Dimensione centrale */
+    width: 50%;
     max-width: 600px;
 }
 
 .navbar .search-box input {
-    background-color: #e0f7f4; /* Sfondo verde chiaro */
+    background-color: #e0f7f4;
     border: none;
     padding: 10px 15px 10px 40px;
     border-radius: 25px;
-    color: #333; /* Testo scuro */
+    color: #333;
     font-size: 1rem;
     width: 100%;
     outline: none;
@@ -102,7 +102,7 @@ body {
 }
 
 .navbar .search-box input::placeholder {
-    color: #888888; /* Testo placeholder */
+    color: #888888;
 }
 
 .navbar .search-box i {
@@ -111,12 +111,12 @@ body {
     left: 15px;
     transform: translateY(-50%);
     font-size: 1.2rem;
-    color: #333; /* Icona scura */
+    color: #333;
 }
 
 .navbar .search-box input:focus {
-    background-color: white; /* Sfondo bianco al focus */
-    border: 2px solid #13c1ac; /* Bordo verde chiaro */
+    background-color: white;
+    border: 2px solid #13c1ac;
     outline: none;
 }
 
@@ -130,7 +130,7 @@ body {
 /* #region  */
 
 .btn-primary {
-    background-color: #13c1ac; /* Verde chiaro */
+    background-color: #13c1ac;
     border-radius: 25px;
     color: white;
     font-weight: 600;
@@ -139,7 +139,7 @@ body {
     border: none;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra sia icona che testo */
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
@@ -169,11 +169,11 @@ body {
 
 /* Pulsante */
 .btn-custom {
-    background-color: var(--main-bg-color); /* Verde chiaro */
+    background-color: var(--main-bg-color);
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 30px; /* Bottone arrotondato */
+    border-radius: 30px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -182,8 +182,8 @@ body {
 }
 
 .btn-custom:hover {
-    background-color: var(--button-color); /* Verde scuro */
-    transform: scale(1.05); /* Effetto hover */
+    background-color: var(--button-color);
+    transform: scale(1.05);
 }
 
 .btn-success,
@@ -218,8 +218,8 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 .category-item {
-    font-size: 1rem; /* Dimensione del testo */
-    font-weight: 500; /* Peso medio */
+    font-size: 1rem;
+    font-weight: 500;
 }
 .categories-bar .container {
     padding-left: 0;
@@ -255,8 +255,8 @@ body {
 .category-box {
     display: inline-block;
     background-color: white;
-    border: 5px solid var(--main-bg-color); /* Cornice con il colore verde chiaro */
-    border-radius: 15px; /* Angoli arrotondati */
+    border: 5px solid var(--main-bg-color);
+    border-radius: 15px;
     padding: 10px;
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -264,7 +264,7 @@ body {
 
 .category-img {
     width: 100%;
-    border-radius: 10px; /* Immagine con angoli arrotondati */
+    border-radius: 10px;
     transition: transform 0.3s ease;
     max-height: 65vh;
 }
@@ -276,7 +276,7 @@ body {
 /* ! Hero section */
 /* Hero Section */
 .hero-section {
-    background-color: #136d60; /* Colore di sfondo */
+    background-color: #136d60;
     color: white;
     min-height: 60vh;
     padding: 20px 0;
@@ -292,7 +292,7 @@ body {
 
 .hero-text-box h1,
 .hero-text-box h2 {
-    color: #d8ff7c; /* Colore del testo */
+    color: #d8ff7c;
     margin-bottom: 10px;
 }
 
@@ -305,31 +305,31 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
-    max-width: 80%; /* Riduce la larghezza per bilanciare */
+    max-width: 80%;
 }
 
 .hero-text-box .btn-hero:hover {
-    transform: scale(1.1); /* Effetto di ingrandimento al passaggio */
-    background-color: #00b36b; /* Colore leggermente più scuro */
+    transform: scale(1.1);
+    background-color: #00b36b;
 }
 
 .hero-image {
-    border-radius: 15px; /* Arrotonda i bordi */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombra elegante */
-    max-width: 90%; /* Riduce leggermente la larghezza */
-    max-height: 400px; /* Altezza massima */
-    height: auto; /* Mantiene le proporzioni */
-    margin: 0 auto; /* Centra l'immagine */
-    display: block; /* Assicura che sia un elemento di blocco */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: 400px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
     filter: brightness(95%);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombra più evidente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-section .col-md-6:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Spaziatura uniforme */
+    padding: 20px;
 }
 
 /* Per assicurare che le colonne siano attaccate */
@@ -358,12 +358,12 @@ body {
 /* #region  */
 .hero-section-with-overlay {
     position: relative;
-    height: 50vh; /* Altezza della sezione */
+    height: 50vh;
     overflow: auto;
 }
 
 .hero-section-with-overlay img {
-    object-fit: cover; /* Copre l'intera area */
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -381,13 +381,13 @@ body {
 .hero-text {
     z-index: 2;
     font-family: "Roboto", sans-serif;
-    text-transform: uppercase; /* Testo tutto maiuscolo */
+    text-transform: uppercase;
 }
 
 .hero-text h1 {
-    font-size: 3rem; /* Dimensione del testo */
+    font-size: 3rem;
     font-weight: bold;
-    line-height: 1.2; /* Spaziatura tra le righe */
+    line-height: 1.2;
 }
 /* #endregion */
 
@@ -420,7 +420,7 @@ body {
     padding: 20px 40px;
 }
 .form-group {
-    margin-bottom: 20px; /* Aumenta lo spazio tra i campi */
+    margin-bottom: 20px;
 }
 
 .form-control {
@@ -441,7 +441,7 @@ body {
 /*! Cards */
 /* #region  */
 .latest-announcements {
-    background-color: #f7f7f7; /* Sfondo leggero */
+    background-color: #f7f7f7;
     padding: 50px 0;
 }
 
@@ -529,14 +529,14 @@ body {
 /* Classe per gestire immagini responsive nel carosello */
 .img-custom {
 
-    object-fit: cover;   /* Ritaglia l'immagine mantenendo il rapporto d'aspetto */
+    object-fit: cover;
     object-position: center;
     padding: 10%;
 }
 
 .carousel-inner {
-    max-height: 500px; /* Limita l'altezza massima del carosello */
-    overflow: hidden;  /* Nasconde eventuali immagini fuoriuscite */
+    max-height: 500px;
+    overflow: hidden;
 }
 
 /* #endregion */
@@ -545,15 +545,16 @@ body {
 /* #region  */
 .carousel-item img {
     object-fit: cover;
-    height: 400px;
+        height: 600px;
     width: 100%;
-    border-radius: 0.5rem; /* Per gli angoli arrotondati */
+    border-radius: 0.5rem;
+
 }
 .carousel-inner {
-    background-color: black; /* Sfondo del carosello */
-    height: 500px; /* Altezza fissa del carosello */
+    background-color: black;
+    height: 500px;
     display: flex;
-    align-items: center; /* Centra verticalmente le immagini */
+    align-items: center;
 }
 
 .carousel-control-prev-icon,
@@ -572,21 +573,21 @@ body {
 /* Pulsanti annunci accettati/rifiutati */
 .btn-outline-success {
     background-color: transparent;
-    border: 2px solid #198754; /* Verde */
-    color: #198754; /* Colore testo */
+    border: 2px solid #198754;
+    color: #198754;
     border-radius: 25px;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .btn-outline-success:hover {
-    background-color: #198754; /* Verde pieno al passaggio */
+    background-color: #198754;
     color: white;
 }
 
 .btn-outline-danger {
     background-color: transparent;
-    border: 2px solid #dc3545; /* Rosso */
+    border: 2px solid #dc3545;
     color: #dc3545; /* Colore testo */
     border-radius: 25px;
     font-weight: bold;
@@ -594,9 +595,16 @@ body {
 }
 
 .btn-outline-danger:hover {
-    background-color: #dc3545; /* Rosso pieno al passaggio */
+    background-color: #dc3545;
     color: white;
 }
+
+/* .img-custom{
+min-height: 100%;
+min-width: 100%;
+} */
+
+
 /* #endregion */
 
 /*? Footer */
@@ -642,13 +650,13 @@ footer {
     }
 
     footer .row {
-        text-align: center; /* Centra il testo */
+        text-align: center;
     }
 
     footer .col-12 {
-        display: flex; /* Usa il layout flexbox */
-        flex-direction: column; /* Allinea verticalmente */
-        align-items: center; /* Centra gli elementi */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .img-preview {
