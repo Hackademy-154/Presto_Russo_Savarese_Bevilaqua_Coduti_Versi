@@ -3,6 +3,7 @@ FROM php:8.2-fpm-bookworm
 
 ARG UID=1000
 ARG GID=1000
+RUN test "$UID" -ne 0 -a "$GID" -ne 0 || (echo "ERROR: UID/GID must not be 0" && exit 1)
 ARG TZ=Europe/Rome
 
 # Pacchetti essenziali (no raccomandati → meno superficie)
