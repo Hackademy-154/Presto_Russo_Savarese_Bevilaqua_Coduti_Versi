@@ -1,0 +1,9 @@
+.git
+vendor
+node_modules
+docker/mysql
+docker/redis
+storage/*.key
+storage/framework/cache/data/*
+storage/logs/*
+.env
