@@ -20,6 +20,9 @@ docker compose exec laravel bash -lc "composer install"
 <br>
 docker compose exec laravel php artisan key:generate
 <br>
+Se continuate ad ottenere errore che app key non c'è, docker compose down e poi docker compose up -d --build
+<br>
+
 docker compose exec laravel php artisan migrate --seed
 <br>
 docker compose exec laravel php artisan storage:link || true
